@@ -16,5 +16,10 @@ namespace E_HealthCare.PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void LoginPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
