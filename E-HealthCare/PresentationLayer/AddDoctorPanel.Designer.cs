@@ -38,30 +38,32 @@ namespace E_HealthCare.PresentationLayer
             this.phoneLabel = new System.Windows.Forms.Label();
             this.bloodGroupLabel = new System.Windows.Forms.Label();
             this.genaralInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.dobLabel = new System.Windows.Forms.Label();
-            this.nameLabel = new System.Windows.Forms.Label();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
+            this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.instituteTextBox = new System.Windows.Forms.TextBox();
+            this.bgComboBox = new System.Windows.Forms.ComboBox();
+            this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.dobLabel = new System.Windows.Forms.Label();
             this.instituteLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.designationComboBox = new System.Windows.Forms.ComboBox();
+            this.feeTextBox = new System.Windows.Forms.TextBox();
+            this.feeLabel = new System.Windows.Forms.Label();
+            this.departmentLabel = new System.Windows.Forms.Label();
+            this.shift1Label = new System.Windows.Forms.Label();
+            this.designationLabel = new System.Windows.Forms.Label();
+            this.degreeCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.degreeLabel = new System.Windows.Forms.Label();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.confirmTextBox = new System.Windows.Forms.TextBox();
-            this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.bgComboBox = new System.Windows.Forms.ComboBox();
-            this.degreeCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.designationLabel = new System.Windows.Forms.Label();
-            this.dutyLabel = new System.Windows.Forms.Label();
-            this.dutyCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.departmentLabel = new System.Windows.Forms.Label();
-            this.feeLabel = new System.Windows.Forms.Label();
-            this.feeTextBox = new System.Windows.Forms.TextBox();
-            this.instituteTextBox = new System.Windows.Forms.TextBox();
-            this.phoneTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.designationComboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.addButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.shift2Label = new System.Windows.Forms.Label();
+            this.shift1TextBox = new System.Windows.Forms.TextBox();
+            this.shiftTextBox = new System.Windows.Forms.TextBox();
             this.genaralInfoGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -165,15 +167,53 @@ namespace E_HealthCare.PresentationLayer
             this.genaralInfoGroupBox.TabStop = false;
             this.genaralInfoGroupBox.Text = "Genaral Information";
             // 
-            // dobLabel
+            // addressTextBox
             // 
-            this.dobLabel.AutoSize = true;
-            this.dobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobLabel.Location = new System.Drawing.Point(75, 145);
-            this.dobLabel.Name = "dobLabel";
-            this.dobLabel.Size = new System.Drawing.Size(60, 25);
-            this.dobLabel.TabIndex = 16;
-            this.dobLabel.Text = "DoB:";
+            this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTextBox.Location = new System.Drawing.Point(154, 367);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(225, 30);
+            this.addressTextBox.TabIndex = 32;
+            // 
+            // phoneTextBox
+            // 
+            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTextBox.Location = new System.Drawing.Point(154, 315);
+            this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.Size = new System.Drawing.Size(225, 30);
+            this.phoneTextBox.TabIndex = 31;
+            // 
+            // instituteTextBox
+            // 
+            this.instituteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instituteTextBox.Location = new System.Drawing.Point(154, 263);
+            this.instituteTextBox.Name = "instituteTextBox";
+            this.instituteTextBox.Size = new System.Drawing.Size(225, 30);
+            this.instituteTextBox.TabIndex = 30;
+            // 
+            // bgComboBox
+            // 
+            this.bgComboBox.FormattingEnabled = true;
+            this.bgComboBox.Location = new System.Drawing.Point(154, 201);
+            this.bgComboBox.Name = "bgComboBox";
+            this.bgComboBox.Size = new System.Drawing.Size(225, 24);
+            this.bgComboBox.TabIndex = 22;
+            // 
+            // dobDateTimePicker
+            // 
+            this.dobDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dobDateTimePicker.Location = new System.Drawing.Point(154, 144);
+            this.dobDateTimePicker.Name = "dobDateTimePicker";
+            this.dobDateTimePicker.Size = new System.Drawing.Size(225, 27);
+            this.dobDateTimePicker.TabIndex = 21;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTextBox.Location = new System.Drawing.Point(154, 42);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(225, 30);
+            this.nameTextBox.TabIndex = 18;
             // 
             // nameLabel
             // 
@@ -185,13 +225,15 @@ namespace E_HealthCare.PresentationLayer
             this.nameLabel.TabIndex = 17;
             this.nameLabel.Text = "Name:";
             // 
-            // nameTextBox
+            // dobLabel
             // 
-            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.Location = new System.Drawing.Point(154, 42);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(225, 30);
-            this.nameTextBox.TabIndex = 18;
+            this.dobLabel.AutoSize = true;
+            this.dobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dobLabel.Location = new System.Drawing.Point(75, 145);
+            this.dobLabel.Name = "dobLabel";
+            this.dobLabel.Size = new System.Drawing.Size(60, 25);
+            this.dobLabel.TabIndex = 16;
+            this.dobLabel.Text = "DoB:";
             // 
             // instituteLabel
             // 
@@ -206,13 +248,15 @@ namespace E_HealthCare.PresentationLayer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.shiftTextBox);
+            this.groupBox1.Controls.Add(this.shift1TextBox);
+            this.groupBox1.Controls.Add(this.shift2Label);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.designationComboBox);
             this.groupBox1.Controls.Add(this.feeTextBox);
             this.groupBox1.Controls.Add(this.feeLabel);
             this.groupBox1.Controls.Add(this.departmentLabel);
-            this.groupBox1.Controls.Add(this.dutyCheckedListBox);
-            this.groupBox1.Controls.Add(this.dutyLabel);
+            this.groupBox1.Controls.Add(this.shift1Label);
             this.groupBox1.Controls.Add(this.designationLabel);
             this.groupBox1.Controls.Add(this.degreeCheckedListBox);
             this.groupBox1.Controls.Add(this.degreeLabel);
@@ -222,6 +266,86 @@ namespace E_HealthCare.PresentationLayer
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Professional Information";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(204, 319);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(138, 28);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // designationComboBox
+            // 
+            this.designationComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designationComboBox.FormattingEnabled = true;
+            this.designationComboBox.Location = new System.Drawing.Point(204, 146);
+            this.designationComboBox.Name = "designationComboBox";
+            this.designationComboBox.Size = new System.Drawing.Size(138, 28);
+            this.designationComboBox.TabIndex = 30;
+            // 
+            // feeTextBox
+            // 
+            this.feeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeTextBox.Location = new System.Drawing.Point(204, 378);
+            this.feeTextBox.Name = "feeTextBox";
+            this.feeTextBox.Size = new System.Drawing.Size(138, 30);
+            this.feeTextBox.TabIndex = 29;
+            // 
+            // feeLabel
+            // 
+            this.feeLabel.AutoSize = true;
+            this.feeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeLabel.Location = new System.Drawing.Point(115, 381);
+            this.feeLabel.Name = "feeLabel";
+            this.feeLabel.Size = new System.Drawing.Size(56, 25);
+            this.feeLabel.TabIndex = 28;
+            this.feeLabel.Text = "Fee:";
+            // 
+            // departmentLabel
+            // 
+            this.departmentLabel.AutoSize = true;
+            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentLabel.Location = new System.Drawing.Point(41, 315);
+            this.departmentLabel.Name = "departmentLabel";
+            this.departmentLabel.Size = new System.Drawing.Size(130, 25);
+            this.departmentLabel.TabIndex = 27;
+            this.departmentLabel.Text = "Department:";
+            // 
+            // shift1Label
+            // 
+            this.shift1Label.AutoSize = true;
+            this.shift1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift1Label.Location = new System.Drawing.Point(61, 201);
+            this.shift1Label.Name = "shift1Label";
+            this.shift1Label.Size = new System.Drawing.Size(110, 25);
+            this.shift1Label.TabIndex = 25;
+            this.shift1Label.Text = "Shift One:";
+            // 
+            // designationLabel
+            // 
+            this.designationLabel.AutoSize = true;
+            this.designationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designationLabel.Location = new System.Drawing.Point(38, 144);
+            this.designationLabel.Name = "designationLabel";
+            this.designationLabel.Size = new System.Drawing.Size(133, 25);
+            this.designationLabel.TabIndex = 24;
+            this.designationLabel.Text = "Designation:";
+            // 
+            // degreeCheckedListBox
+            // 
+            this.degreeCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.degreeCheckedListBox.FormattingEnabled = true;
+            this.degreeCheckedListBox.Items.AddRange(new object[] {
+            "M.B.B.S",
+            "MD",
+            "MS",
+            "FRCP"});
+            this.degreeCheckedListBox.Location = new System.Drawing.Point(204, 45);
+            this.degreeCheckedListBox.Name = "degreeCheckedListBox";
+            this.degreeCheckedListBox.Size = new System.Drawing.Size(138, 70);
+            this.degreeCheckedListBox.TabIndex = 23;
             // 
             // degreeLabel
             // 
@@ -251,140 +375,6 @@ namespace E_HealthCare.PresentationLayer
             this.confirmTextBox.Size = new System.Drawing.Size(176, 30);
             this.confirmTextBox.TabIndex = 12;
             // 
-            // dobDateTimePicker
-            // 
-            this.dobDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobDateTimePicker.Location = new System.Drawing.Point(154, 144);
-            this.dobDateTimePicker.Name = "dobDateTimePicker";
-            this.dobDateTimePicker.Size = new System.Drawing.Size(225, 27);
-            this.dobDateTimePicker.TabIndex = 21;
-            // 
-            // bgComboBox
-            // 
-            this.bgComboBox.FormattingEnabled = true;
-            this.bgComboBox.Location = new System.Drawing.Point(154, 201);
-            this.bgComboBox.Name = "bgComboBox";
-            this.bgComboBox.Size = new System.Drawing.Size(225, 24);
-            this.bgComboBox.TabIndex = 22;
-            // 
-            // degreeCheckedListBox
-            // 
-            this.degreeCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.degreeCheckedListBox.FormattingEnabled = true;
-            this.degreeCheckedListBox.Items.AddRange(new object[] {
-            "M.B.B.S",
-            "MD",
-            "MS",
-            "FRCP"});
-            this.degreeCheckedListBox.Location = new System.Drawing.Point(204, 45);
-            this.degreeCheckedListBox.Name = "degreeCheckedListBox";
-            this.degreeCheckedListBox.Size = new System.Drawing.Size(138, 70);
-            this.degreeCheckedListBox.TabIndex = 23;
-            // 
-            // designationLabel
-            // 
-            this.designationLabel.AutoSize = true;
-            this.designationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designationLabel.Location = new System.Drawing.Point(38, 144);
-            this.designationLabel.Name = "designationLabel";
-            this.designationLabel.Size = new System.Drawing.Size(133, 25);
-            this.designationLabel.TabIndex = 24;
-            this.designationLabel.Text = "Designation:";
-            // 
-            // dutyLabel
-            // 
-            this.dutyLabel.AutoSize = true;
-            this.dutyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dutyLabel.Location = new System.Drawing.Point(108, 217);
-            this.dutyLabel.Name = "dutyLabel";
-            this.dutyLabel.Size = new System.Drawing.Size(63, 25);
-            this.dutyLabel.TabIndex = 25;
-            this.dutyLabel.Text = "Duty:";
-            // 
-            // dutyCheckedListBox
-            // 
-            this.dutyCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dutyCheckedListBox.FormattingEnabled = true;
-            this.dutyCheckedListBox.Items.AddRange(new object[] {
-            "M.B.B.S",
-            "MD",
-            "MS",
-            "FRCP"});
-            this.dutyCheckedListBox.Location = new System.Drawing.Point(204, 217);
-            this.dutyCheckedListBox.Name = "dutyCheckedListBox";
-            this.dutyCheckedListBox.Size = new System.Drawing.Size(138, 72);
-            this.dutyCheckedListBox.TabIndex = 26;
-            // 
-            // departmentLabel
-            // 
-            this.departmentLabel.AutoSize = true;
-            this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentLabel.Location = new System.Drawing.Point(41, 315);
-            this.departmentLabel.Name = "departmentLabel";
-            this.departmentLabel.Size = new System.Drawing.Size(130, 25);
-            this.departmentLabel.TabIndex = 27;
-            this.departmentLabel.Text = "Department:";
-            // 
-            // feeLabel
-            // 
-            this.feeLabel.AutoSize = true;
-            this.feeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeLabel.Location = new System.Drawing.Point(115, 381);
-            this.feeLabel.Name = "feeLabel";
-            this.feeLabel.Size = new System.Drawing.Size(56, 25);
-            this.feeLabel.TabIndex = 28;
-            this.feeLabel.Text = "Fee:";
-            // 
-            // feeTextBox
-            // 
-            this.feeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeTextBox.Location = new System.Drawing.Point(204, 378);
-            this.feeTextBox.Name = "feeTextBox";
-            this.feeTextBox.Size = new System.Drawing.Size(138, 30);
-            this.feeTextBox.TabIndex = 29;
-            // 
-            // instituteTextBox
-            // 
-            this.instituteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instituteTextBox.Location = new System.Drawing.Point(154, 263);
-            this.instituteTextBox.Name = "instituteTextBox";
-            this.instituteTextBox.Size = new System.Drawing.Size(225, 30);
-            this.instituteTextBox.TabIndex = 30;
-            // 
-            // phoneTextBox
-            // 
-            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTextBox.Location = new System.Drawing.Point(154, 315);
-            this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(225, 30);
-            this.phoneTextBox.TabIndex = 31;
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(154, 367);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(225, 30);
-            this.addressTextBox.TabIndex = 32;
-            // 
-            // designationComboBox
-            // 
-            this.designationComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designationComboBox.FormattingEnabled = true;
-            this.designationComboBox.Location = new System.Drawing.Point(204, 146);
-            this.designationComboBox.Name = "designationComboBox";
-            this.designationComboBox.Size = new System.Drawing.Size(138, 28);
-            this.designationComboBox.TabIndex = 30;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(204, 319);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 28);
-            this.comboBox1.TabIndex = 31;
-            // 
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -404,6 +394,32 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.TabIndex = 19;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            // 
+            // shift2Label
+            // 
+            this.shift2Label.AutoSize = true;
+            this.shift2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift2Label.Location = new System.Drawing.Point(61, 263);
+            this.shift2Label.Name = "shift2Label";
+            this.shift2Label.Size = new System.Drawing.Size(110, 25);
+            this.shift2Label.TabIndex = 32;
+            this.shift2Label.Text = "Shift Two:";
+            // 
+            // shift1TextBox
+            // 
+            this.shift1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift1TextBox.Location = new System.Drawing.Point(204, 198);
+            this.shift1TextBox.Name = "shift1TextBox";
+            this.shift1TextBox.Size = new System.Drawing.Size(138, 30);
+            this.shift1TextBox.TabIndex = 33;
+            // 
+            // shiftTextBox
+            // 
+            this.shiftTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shiftTextBox.Location = new System.Drawing.Point(204, 260);
+            this.shiftTextBox.Name = "shiftTextBox";
+            this.shiftTextBox.Size = new System.Drawing.Size(138, 30);
+            this.shiftTextBox.TabIndex = 34;
             // 
             // AddDoctorPanel
             // 
@@ -450,8 +466,7 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label dobLabel;
         private System.Windows.Forms.Label instituteLabel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckedListBox dutyCheckedListBox;
-        private System.Windows.Forms.Label dutyLabel;
+        private System.Windows.Forms.Label shift1Label;
         private System.Windows.Forms.Label designationLabel;
         private System.Windows.Forms.CheckedListBox degreeCheckedListBox;
         private System.Windows.Forms.Label degreeLabel;
@@ -467,5 +482,8 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label feeLabel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label shift2Label;
+        private System.Windows.Forms.TextBox shiftTextBox;
+        private System.Windows.Forms.TextBox shift1TextBox;
     }
 }

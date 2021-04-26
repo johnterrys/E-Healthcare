@@ -36,6 +36,7 @@ namespace E_HealthCare.PresentationLayer
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.ehealthcareLabel = new System.Windows.Forms.Label();
+            this.providerRegisterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameLabel
@@ -87,9 +88,9 @@ namespace E_HealthCare.PresentationLayer
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(261, 375);
+            this.registerButton.Location = new System.Drawing.Point(61, 352);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(208, 29);
+            this.registerButton.Size = new System.Drawing.Size(254, 29);
             this.registerButton.TabIndex = 5;
             this.registerButton.Text = "Don\'t have account?";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -104,11 +105,22 @@ namespace E_HealthCare.PresentationLayer
             this.ehealthcareLabel.TabIndex = 6;
             this.ehealthcareLabel.Text = "E-healthcare";
             // 
+            // providerRegisterButton
+            // 
+            this.providerRegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.providerRegisterButton.Location = new System.Drawing.Point(403, 352);
+            this.providerRegisterButton.Name = "providerRegisterButton";
+            this.providerRegisterButton.Size = new System.Drawing.Size(261, 29);
+            this.providerRegisterButton.TabIndex = 7;
+            this.providerRegisterButton.Text = "Want to Provide Ambulance?";
+            this.providerRegisterButton.UseVisualStyleBackColor = true;
+            // 
             // LoginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 461);
+            this.Controls.Add(this.providerRegisterButton);
             this.Controls.Add(this.ehealthcareLabel);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
@@ -134,5 +146,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label ehealthcareLabel;
+        private System.Windows.Forms.Button providerRegisterButton;
     }
 }

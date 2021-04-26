@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace E_HealthCare.PresentationLayer
 {
-    public partial class Blood_Request : Form
+    public partial class UserRegistrationPanel : Form
     {
-        public Blood_Request()
+        public UserRegistrationPanel()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Blood_Request_FormClosing(object sender, FormClosingEventArgs e)
+        private void UserRegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

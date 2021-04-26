@@ -73,6 +73,30 @@
     <Compile Include="PresentationLayer\LoginPanel.Designer.cs">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\MakeAppoinmentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\MakeAppoinmentPanel.Designer.cs">
+      <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserRegistrationPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserRegistrationPanel.Designer.cs">
+      <DependentUpon>UserRegistrationPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PresentationLayer\AddDoctorPanel.resx">
@@ -86,6 +110,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\MakeAppoinmentPanel.resx">
+      <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserRegistrationPanel.resx">
+      <DependentUpon>UserRegistrationPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
