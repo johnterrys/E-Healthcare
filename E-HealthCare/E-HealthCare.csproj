@@ -61,6 +61,12 @@
     <Compile Include="PresentationLayer\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Blood Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Blood Request.Designer.cs">
+      <DependentUpon>Blood Request.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\LoginPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Blood Request.resx">
+      <DependentUpon>Blood Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
