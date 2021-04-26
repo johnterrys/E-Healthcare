@@ -463,7 +463,7 @@ namespace E_HealthCare.PresentationLayer
             this.dgvDonors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDonors.Location = new System.Drawing.Point(424, 107);
             this.dgvDonors.Name = "dgvDonors";
-            this.dgvDonors.Size = new System.Drawing.Size(585, 268);
+            this.dgvDonors.Size = new System.Drawing.Size(585, 235);
             this.dgvDonors.TabIndex = 10;
             // 
             // lblSearch
@@ -479,7 +479,7 @@ namespace E_HealthCare.PresentationLayer
             // textSearch
             // 
             this.textSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(538, 74);
+            this.textSearch.Location = new System.Drawing.Point(538, 71);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(471, 29);
             this.textSearch.TabIndex = 12;
