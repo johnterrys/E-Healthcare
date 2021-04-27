@@ -30,6 +30,10 @@ namespace E_HealthCare.PresentationLayer
         private void InitializeComponent()
         {
             this.genaralInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.confirmPasswordLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.confirmTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.bgComboBox = new System.Windows.Forms.ComboBox();
@@ -43,10 +47,6 @@ namespace E_HealthCare.PresentationLayer
             this.phoneLabel = new System.Windows.Forms.Label();
             this.addressLabel = new System.Windows.Forms.Label();
             this.ehealthcareLabel = new System.Windows.Forms.Label();
-            this.confirmPasswordLabel = new System.Windows.Forms.Label();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.confirmTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.termsCheckBox = new System.Windows.Forms.CheckBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
@@ -77,6 +77,42 @@ namespace E_HealthCare.PresentationLayer
             this.genaralInfoGroupBox.TabIndex = 18;
             this.genaralInfoGroupBox.TabStop = false;
             this.genaralInfoGroupBox.Text = "Genaral Information";
+            // 
+            // confirmPasswordLabel
+            // 
+            this.confirmPasswordLabel.AutoSize = true;
+            this.confirmPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(15, 411);
+            this.confirmPasswordLabel.Name = "confirmPasswordLabel";
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(188, 25);
+            this.confirmPasswordLabel.TabIndex = 33;
+            this.confirmPasswordLabel.Text = "ConfirmPassword:";
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(83, 355);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(113, 25);
+            this.passwordLabel.TabIndex = 34;
+            this.passwordLabel.Text = "Password:";
+            // 
+            // confirmTextBox
+            // 
+            this.confirmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmTextBox.Location = new System.Drawing.Point(249, 408);
+            this.confirmTextBox.Name = "confirmTextBox";
+            this.confirmTextBox.Size = new System.Drawing.Size(225, 30);
+            this.confirmTextBox.TabIndex = 35;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(249, 352);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(225, 30);
+            this.passwordTextBox.TabIndex = 36;
             // 
             // addressTextBox
             // 
@@ -196,42 +232,6 @@ namespace E_HealthCare.PresentationLayer
             this.ehealthcareLabel.TabIndex = 17;
             this.ehealthcareLabel.Text = "E-healthcare";
             // 
-            // confirmPasswordLabel
-            // 
-            this.confirmPasswordLabel.AutoSize = true;
-            this.confirmPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(15, 411);
-            this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(188, 25);
-            this.confirmPasswordLabel.TabIndex = 33;
-            this.confirmPasswordLabel.Text = "ConfirmPassword:";
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(83, 355);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(113, 25);
-            this.passwordLabel.TabIndex = 34;
-            this.passwordLabel.Text = "Password:";
-            // 
-            // confirmTextBox
-            // 
-            this.confirmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmTextBox.Location = new System.Drawing.Point(249, 408);
-            this.confirmTextBox.Name = "confirmTextBox";
-            this.confirmTextBox.Size = new System.Drawing.Size(225, 30);
-            this.confirmTextBox.TabIndex = 35;
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(249, 352);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(225, 30);
-            this.passwordTextBox.TabIndex = 36;
-            // 
             // termsCheckBox
             // 
             this.termsCheckBox.AutoSize = true;
@@ -241,6 +241,7 @@ namespace E_HealthCare.PresentationLayer
             this.termsCheckBox.TabIndex = 19;
             this.termsCheckBox.Text = "I agree Terms And Condition";
             this.termsCheckBox.UseVisualStyleBackColor = true;
+            this.termsCheckBox.CheckedChanged += new System.EventHandler(this.termsCheckBox_CheckedChanged);
             // 
             // registerButton
             // 
@@ -251,6 +252,7 @@ namespace E_HealthCare.PresentationLayer
             this.registerButton.TabIndex = 20;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // backButton
             // 
