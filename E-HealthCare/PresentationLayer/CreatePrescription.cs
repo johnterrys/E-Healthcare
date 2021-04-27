@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace E_HealthCare.PresentationLayer
 {
-    public partial class Medicine : Form
+    public partial class CreatePrescription : Form
     {
-        public Medicine()
+        public CreatePrescription()
         {
             InitializeComponent();
+        }
+
+        private void CreatePrescription_Load(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

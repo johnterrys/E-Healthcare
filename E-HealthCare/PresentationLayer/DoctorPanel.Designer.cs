@@ -30,18 +30,19 @@ namespace E_HealthCare.PresentationLayer
         private void InitializeComponent()
         {
             this.appoinmentsGroupBox = new System.Windows.Forms.GroupBox();
-            this.appoinmentsDataGridView = new System.Windows.Forms.DataGridView();
-            this.doneButton = new System.Windows.Forms.Button();
             this.oldNewTriggerButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
+            this.appoinmentsDataGridView = new System.Windows.Forms.DataGridView();
             this.appoinmentPanelButton = new System.Windows.Forms.Button();
-            this.MedicinePanelButton = new System.Windows.Forms.Button();
             this.profilePanelButton = new System.Windows.Forms.Button();
+            this.checkButton = new System.Windows.Forms.Button();
             this.appoinmentsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appoinmentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // appoinmentsGroupBox
             // 
+            this.appoinmentsGroupBox.Controls.Add(this.checkButton);
             this.appoinmentsGroupBox.Controls.Add(this.oldNewTriggerButton);
             this.appoinmentsGroupBox.Controls.Add(this.doneButton);
             this.appoinmentsGroupBox.Controls.Add(this.appoinmentsDataGridView);
@@ -52,13 +53,14 @@ namespace E_HealthCare.PresentationLayer
             this.appoinmentsGroupBox.TabStop = false;
             this.appoinmentsGroupBox.Text = "Appoinments";
             // 
-            // appoinmentsDataGridView
+            // oldNewTriggerButton
             // 
-            this.appoinmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.appoinmentsDataGridView.Location = new System.Drawing.Point(6, 19);
-            this.appoinmentsDataGridView.Name = "appoinmentsDataGridView";
-            this.appoinmentsDataGridView.Size = new System.Drawing.Size(357, 193);
-            this.appoinmentsDataGridView.TabIndex = 0;
+            this.oldNewTriggerButton.Location = new System.Drawing.Point(6, 218);
+            this.oldNewTriggerButton.Name = "oldNewTriggerButton";
+            this.oldNewTriggerButton.Size = new System.Drawing.Size(75, 23);
+            this.oldNewTriggerButton.TabIndex = 2;
+            this.oldNewTriggerButton.Text = "Old";
+            this.oldNewTriggerButton.UseVisualStyleBackColor = true;
             // 
             // doneButton
             // 
@@ -69,41 +71,40 @@ namespace E_HealthCare.PresentationLayer
             this.doneButton.Text = "Done";
             this.doneButton.UseVisualStyleBackColor = true;
             // 
-            // oldNewTriggerButton
+            // appoinmentsDataGridView
             // 
-            this.oldNewTriggerButton.Location = new System.Drawing.Point(6, 218);
-            this.oldNewTriggerButton.Name = "oldNewTriggerButton";
-            this.oldNewTriggerButton.Size = new System.Drawing.Size(75, 23);
-            this.oldNewTriggerButton.TabIndex = 2;
-            this.oldNewTriggerButton.Text = "Old";
-            this.oldNewTriggerButton.UseVisualStyleBackColor = true;
+            this.appoinmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appoinmentsDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.appoinmentsDataGridView.Name = "appoinmentsDataGridView";
+            this.appoinmentsDataGridView.Size = new System.Drawing.Size(357, 193);
+            this.appoinmentsDataGridView.TabIndex = 0;
             // 
             // appoinmentPanelButton
             // 
             this.appoinmentPanelButton.Location = new System.Drawing.Point(12, 12);
             this.appoinmentPanelButton.Name = "appoinmentPanelButton";
-            this.appoinmentPanelButton.Size = new System.Drawing.Size(81, 104);
+            this.appoinmentPanelButton.Size = new System.Drawing.Size(81, 155);
             this.appoinmentPanelButton.TabIndex = 3;
             this.appoinmentPanelButton.Text = "Appoinments";
             this.appoinmentPanelButton.UseVisualStyleBackColor = true;
             // 
-            // MedicinePanelButton
-            // 
-            this.MedicinePanelButton.Location = new System.Drawing.Point(12, 120);
-            this.MedicinePanelButton.Name = "MedicinePanelButton";
-            this.MedicinePanelButton.Size = new System.Drawing.Size(81, 104);
-            this.MedicinePanelButton.TabIndex = 4;
-            this.MedicinePanelButton.Text = "Medicine";
-            this.MedicinePanelButton.UseVisualStyleBackColor = true;
-            // 
             // profilePanelButton
             // 
-            this.profilePanelButton.Location = new System.Drawing.Point(12, 230);
+            this.profilePanelButton.Location = new System.Drawing.Point(12, 173);
             this.profilePanelButton.Name = "profilePanelButton";
-            this.profilePanelButton.Size = new System.Drawing.Size(81, 104);
+            this.profilePanelButton.Size = new System.Drawing.Size(81, 161);
             this.profilePanelButton.TabIndex = 5;
             this.profilePanelButton.Text = "Profile";
             this.profilePanelButton.UseVisualStyleBackColor = true;
+            // 
+            // checkButton
+            // 
+            this.checkButton.Location = new System.Drawing.Point(143, 218);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(75, 23);
+            this.checkButton.TabIndex = 3;
+            this.checkButton.Text = "Check";
+            this.checkButton.UseVisualStyleBackColor = true;
             // 
             // DoctorPanel
             // 
@@ -111,7 +112,6 @@ namespace E_HealthCare.PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 346);
             this.Controls.Add(this.profilePanelButton);
-            this.Controls.Add(this.MedicinePanelButton);
             this.Controls.Add(this.appoinmentPanelButton);
             this.Controls.Add(this.appoinmentsGroupBox);
             this.Name = "DoctorPanel";
@@ -130,7 +130,7 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.DataGridView appoinmentsDataGridView;
         private System.Windows.Forms.Button appoinmentPanelButton;
-        private System.Windows.Forms.Button MedicinePanelButton;
         private System.Windows.Forms.Button profilePanelButton;
+        private System.Windows.Forms.Button checkButton;
     }
 }
