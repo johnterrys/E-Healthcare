@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\UserService.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
+    <Compile Include="DataAccessLayer\Entity\Appointment.cs" />
+    <Compile Include="DataAccessLayer\Entity\Prescription.cs" />
     <Compile Include="DataAccessLayer\Entity\User.cs" />
     <Compile Include="PresentationLayer\AddDoctorPanel.cs">
       <SubType>Form</SubType>

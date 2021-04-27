@@ -43,6 +43,8 @@ namespace E_HealthCare.PresentationLayer
             this.selectShiftLabel = new System.Windows.Forms.Label();
             this.makeAppointmentButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.doctorDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +128,7 @@ namespace E_HealthCare.PresentationLayer
             // doctorNameTextBox
             // 
             this.doctorNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorNameTextBox.Location = new System.Drawing.Point(411, 411);
+            this.doctorNameTextBox.Location = new System.Drawing.Point(411, 384);
             this.doctorNameTextBox.Name = "doctorNameTextBox";
             this.doctorNameTextBox.Size = new System.Drawing.Size(145, 28);
             this.doctorNameTextBox.TabIndex = 41;
@@ -134,7 +136,7 @@ namespace E_HealthCare.PresentationLayer
             // selectDepartmentComboBox
             // 
             this.selectDepartmentComboBox.FormattingEnabled = true;
-            this.selectDepartmentComboBox.Location = new System.Drawing.Point(411, 463);
+            this.selectDepartmentComboBox.Location = new System.Drawing.Point(411, 431);
             this.selectDepartmentComboBox.Name = "selectDepartmentComboBox";
             this.selectDepartmentComboBox.Size = new System.Drawing.Size(145, 24);
             this.selectDepartmentComboBox.TabIndex = 42;
@@ -143,7 +145,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.doctorNameLabel.AutoSize = true;
             this.doctorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorNameLabel.Location = new System.Drawing.Point(291, 417);
+            this.doctorNameLabel.Location = new System.Drawing.Point(291, 390);
             this.doctorNameLabel.Name = "doctorNameLabel";
             this.doctorNameLabel.Size = new System.Drawing.Size(114, 18);
             this.doctorNameLabel.TabIndex = 43;
@@ -153,7 +155,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.selectShiftLabel.AutoSize = true;
             this.selectShiftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectShiftLabel.Location = new System.Drawing.Point(291, 464);
+            this.selectShiftLabel.Location = new System.Drawing.Point(306, 432);
             this.selectShiftLabel.Name = "selectShiftLabel";
             this.selectShiftLabel.Size = new System.Drawing.Size(99, 18);
             this.selectShiftLabel.TabIndex = 44;
@@ -162,7 +164,7 @@ namespace E_HealthCare.PresentationLayer
             // makeAppointmentButton
             // 
             this.makeAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makeAppointmentButton.Location = new System.Drawing.Point(414, 520);
+            this.makeAppointmentButton.Location = new System.Drawing.Point(414, 531);
             this.makeAppointmentButton.Name = "makeAppointmentButton";
             this.makeAppointmentButton.Size = new System.Drawing.Size(125, 59);
             this.makeAppointmentButton.TabIndex = 45;
@@ -179,11 +181,31 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(306, 477);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 18);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Problem:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(411, 471);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(145, 28);
+            this.textBox1.TabIndex = 48;
+            // 
             // MakeAppoinmentPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 632);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.makeAppointmentButton);
             this.Controls.Add(this.selectShiftLabel);
@@ -222,5 +244,7 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label selectShiftLabel;
         private System.Windows.Forms.Button makeAppointmentButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
