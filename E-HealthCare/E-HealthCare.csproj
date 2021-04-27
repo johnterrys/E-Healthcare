@@ -87,12 +87,6 @@
     <Compile Include="PresentationLayer\MakeAppoinmentPanel.Designer.cs">
       <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\Medicine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\Medicine.Designer.cs">
-      <DependentUpon>Medicine.cs</DependentUpon>
-    </Compile>
     <Compile Include="PresentationLayer\UserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MakeAppoinmentPanel.resx">
       <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\Medicine.resx">
-      <DependentUpon>Medicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UserDashboard.resx">
       <DependentUpon>UserDashboard.cs</DependentUpon>

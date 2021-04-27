@@ -16,10 +16,5 @@ namespace E_HealthCare.PresentationLayer
         {
             InitializeComponent();
         }
-
-        private void CreatePrescription_Load(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

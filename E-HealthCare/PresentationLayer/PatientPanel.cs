@@ -19,6 +19,11 @@ namespace E_HealthCare.PresentationLayer
 
         private void PatientPanel_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void PatientPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
             Application.Exit();
         }
     }
