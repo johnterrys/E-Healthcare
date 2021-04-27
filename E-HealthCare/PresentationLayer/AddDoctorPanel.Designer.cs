@@ -48,7 +48,10 @@ namespace E_HealthCare.PresentationLayer
             this.dobLabel = new System.Windows.Forms.Label();
             this.instituteLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.shift2TextBox = new System.Windows.Forms.TextBox();
+            this.shift1TextBox = new System.Windows.Forms.TextBox();
+            this.shift2Label = new System.Windows.Forms.Label();
+            this.deptComboBox = new System.Windows.Forms.ComboBox();
             this.designationComboBox = new System.Windows.Forms.ComboBox();
             this.feeTextBox = new System.Windows.Forms.TextBox();
             this.feeLabel = new System.Windows.Forms.Label();
@@ -61,9 +64,6 @@ namespace E_HealthCare.PresentationLayer
             this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.shift2Label = new System.Windows.Forms.Label();
-            this.shift1TextBox = new System.Windows.Forms.TextBox();
-            this.shiftTextBox = new System.Windows.Forms.TextBox();
             this.genaralInfoGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -248,10 +248,10 @@ namespace E_HealthCare.PresentationLayer
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.shiftTextBox);
+            this.groupBox1.Controls.Add(this.shift2TextBox);
             this.groupBox1.Controls.Add(this.shift1TextBox);
             this.groupBox1.Controls.Add(this.shift2Label);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.deptComboBox);
             this.groupBox1.Controls.Add(this.designationComboBox);
             this.groupBox1.Controls.Add(this.feeTextBox);
             this.groupBox1.Controls.Add(this.feeLabel);
@@ -267,14 +267,40 @@ namespace E_HealthCare.PresentationLayer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Professional Information";
             // 
-            // comboBox1
+            // shift2TextBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(204, 319);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 28);
-            this.comboBox1.TabIndex = 31;
+            this.shift2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift2TextBox.Location = new System.Drawing.Point(204, 260);
+            this.shift2TextBox.Name = "shift2TextBox";
+            this.shift2TextBox.Size = new System.Drawing.Size(138, 30);
+            this.shift2TextBox.TabIndex = 34;
+            // 
+            // shift1TextBox
+            // 
+            this.shift1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift1TextBox.Location = new System.Drawing.Point(204, 198);
+            this.shift1TextBox.Name = "shift1TextBox";
+            this.shift1TextBox.Size = new System.Drawing.Size(138, 30);
+            this.shift1TextBox.TabIndex = 33;
+            // 
+            // shift2Label
+            // 
+            this.shift2Label.AutoSize = true;
+            this.shift2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shift2Label.Location = new System.Drawing.Point(61, 263);
+            this.shift2Label.Name = "shift2Label";
+            this.shift2Label.Size = new System.Drawing.Size(110, 25);
+            this.shift2Label.TabIndex = 32;
+            this.shift2Label.Text = "Shift Two:";
+            // 
+            // deptComboBox
+            // 
+            this.deptComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deptComboBox.FormattingEnabled = true;
+            this.deptComboBox.Location = new System.Drawing.Point(204, 319);
+            this.deptComboBox.Name = "deptComboBox";
+            this.deptComboBox.Size = new System.Drawing.Size(138, 28);
+            this.deptComboBox.TabIndex = 31;
             // 
             // designationComboBox
             // 
@@ -384,6 +410,7 @@ namespace E_HealthCare.PresentationLayer
             this.addButton.TabIndex = 18;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // backButton
             // 
@@ -394,32 +421,6 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.TabIndex = 19;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
-            // 
-            // shift2Label
-            // 
-            this.shift2Label.AutoSize = true;
-            this.shift2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift2Label.Location = new System.Drawing.Point(61, 263);
-            this.shift2Label.Name = "shift2Label";
-            this.shift2Label.Size = new System.Drawing.Size(110, 25);
-            this.shift2Label.TabIndex = 32;
-            this.shift2Label.Text = "Shift Two:";
-            // 
-            // shift1TextBox
-            // 
-            this.shift1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift1TextBox.Location = new System.Drawing.Point(204, 198);
-            this.shift1TextBox.Name = "shift1TextBox";
-            this.shift1TextBox.Size = new System.Drawing.Size(138, 30);
-            this.shift1TextBox.TabIndex = 33;
-            // 
-            // shiftTextBox
-            // 
-            this.shiftTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shiftTextBox.Location = new System.Drawing.Point(204, 260);
-            this.shiftTextBox.Name = "shiftTextBox";
-            this.shiftTextBox.Size = new System.Drawing.Size(138, 30);
-            this.shiftTextBox.TabIndex = 34;
             // 
             // AddDoctorPanel
             // 
@@ -476,14 +477,14 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.TextBox instituteTextBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox deptComboBox;
         private System.Windows.Forms.ComboBox designationComboBox;
         private System.Windows.Forms.TextBox feeTextBox;
         private System.Windows.Forms.Label feeLabel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label shift2Label;
-        private System.Windows.Forms.TextBox shiftTextBox;
+        private System.Windows.Forms.TextBox shift2TextBox;
         private System.Windows.Forms.TextBox shift1TextBox;
     }
 }
