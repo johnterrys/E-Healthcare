@@ -29,7 +29,7 @@ namespace E_HealthCare.PresentationLayer
 
         private void Blood_Request_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
         }
     }
 }
