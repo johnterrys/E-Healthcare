@@ -10,6 +10,7 @@ namespace E_HealthCare.BusinessLayer
 {
     class UserService
     {
+<<<<<<< HEAD
         public User GetUser(string userName, string password)
         {
             UserDataAccess userDataAccess = new UserDataAccess();
@@ -23,5 +24,8 @@ namespace E_HealthCare.BusinessLayer
                 return null;
             }
         }
+=======
+        
+>>>>>>> 4245b7778979ec2400fef0f06085d997ec435c21
     }
 }
