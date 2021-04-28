@@ -26,5 +26,11 @@ namespace E_HealthCare.PresentationLayer
         {
             Application.Exit();
         }
+
+        private void createPrescriptionButton_Click(object sender, EventArgs e)
+        {
+            CreatePrescription createPrescription = new CreatePrescription();
+            createPrescription.Show();
+        }
     }
 }
