@@ -49,12 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\AppointmentService.cs" />
+    <Compile Include="BusinessLayer\PrescriptionService.cs" />
     <Compile Include="BusinessLayer\UserService.cs" />
+    <Compile Include="DataAccessLayer\AppointmentDataAccess.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="DataAccessLayer\Entity\Appointment.cs" />
     <Compile Include="DataAccessLayer\Entity\Medicine.cs" />
     <Compile Include="DataAccessLayer\Entity\Prescription.cs" />
     <Compile Include="DataAccessLayer\Entity\User.cs" />
+    <Compile Include="DataAccessLayer\PrescriptionDataAccess.cs" />
+    <Compile Include="DataAccessLayer\UserDataAccess.cs" />
     <Compile Include="PresentationLayer\AddDoctorPanel.cs">
       <SubType>Form</SubType>
     </Compile>
