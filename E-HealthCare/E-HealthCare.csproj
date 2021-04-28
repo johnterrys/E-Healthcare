@@ -69,6 +69,12 @@
     <Compile Include="PresentationLayer\Blood Request.Designer.cs">
       <DependentUpon>Blood Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\CreatePrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CreatePrescription.Designer.cs">
+      <DependentUpon>CreatePrescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\DoctorPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="PresentationLayer\MakeAppoinmentPanel.Designer.cs">
       <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PatientPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PatientPanel.Designer.cs">
+      <DependentUpon>PatientPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\UserDashboard.cs">
       <SubType>Form</SubType>
@@ -116,6 +128,9 @@
     <EmbeddedResource Include="PresentationLayer\Blood Request.resx">
       <DependentUpon>Blood Request.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CreatePrescription.resx">
+      <DependentUpon>CreatePrescription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\DoctorPanel.resx">
       <DependentUpon>DoctorPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MakeAppoinmentPanel.resx">
       <DependentUpon>MakeAppoinmentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PatientPanel.resx">
+      <DependentUpon>PatientPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UserDashboard.resx">
       <DependentUpon>UserDashboard.cs</DependentUpon>
