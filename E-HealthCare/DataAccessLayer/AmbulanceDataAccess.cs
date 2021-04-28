@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_HealthCare.BusinessLayer
+namespace E_HealthCare.DataAccessLayer
 {
-    class UserService
+    class AmbulanceDataAccess: DataAccess
     {
-        
     }
 }

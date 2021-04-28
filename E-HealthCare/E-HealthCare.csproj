@@ -49,9 +49,13 @@
     <Compile Include="BusinessLayer\AppointmentService.cs" />
     <Compile Include="BusinessLayer\PrescriptionService.cs" />
     <Compile Include="BusinessLayer\UserService.cs" />
+    <Compile Include="DataAccessLayer\AmbulanceDataAccess.cs" />
     <Compile Include="DataAccessLayer\AppointmentDataAccess.cs" />
+    <Compile Include="DataAccessLayer\BloodRequestDataAccess.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
+    <Compile Include="DataAccessLayer\Entity\Ambulance.cs" />
     <Compile Include="DataAccessLayer\Entity\Appointment.cs" />
+    <Compile Include="DataAccessLayer\Entity\BloodRequest.cs" />
     <Compile Include="DataAccessLayer\Entity\Prescription.cs" />
     <Compile Include="DataAccessLayer\Entity\User.cs" />
     <Compile Include="DataAccessLayer\PrescriptionDataAccess.cs" />
