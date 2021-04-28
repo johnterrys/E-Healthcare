@@ -28,10 +28,11 @@ namespace E_HealthCare.DataAccessLayer
             return null;
         }
 
-        public Appointment GetDoctorAppointment(int doctorId)
+        public List<Appointment> GetDoctorAppointments(int doctorId)
         {
-            string sql = "SELECT Date,Shift,PatientName,Problem,UserId fROM Appointments WHERE doctorId='" + doctorId;
+            string sql = "SELECT Date,Shift,PatientName,Problem,UserId fROM Appointments WHERE doctorId=" + doctorId;
             SqlDataReader reader = this.GetData(sql);
+            List<Appointment> appointments = new List<Appointment>();
             if (reader.Read())
             {
                 Appointment appointment = new Appointment();
@@ -40,9 +41,9 @@ namespace E_HealthCare.DataAccessLayer
                 appointment.PatientName = reader["PatientName"].ToString();
                 appointment.Problem = reader["Problem"].ToString();
                 appointment.UserId = Convert.ToInt32(reader["UserId"]);
-                return appointment;
+                appointments.Add(appointment);
             }
-            return null;
+            return appointments;
         }
 
         public Appointment GetUserAppointment(int userId)

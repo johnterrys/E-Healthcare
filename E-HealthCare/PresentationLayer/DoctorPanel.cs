@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_HealthCare.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,15 @@ namespace E_HealthCare.PresentationLayer
         public DoctorPanel(int userId, string Name)
         {
             InitializeComponent();
+            DoctorId = userId;
         }
+
+        public int DoctorId { get; set; }
 
         private void DoctorPanel_Load(object sender, EventArgs e)
         {
-            
+            AppointmentService appointmentService = new AppointmentService();
+            appoinmentsDataGridView.DataSource = appointmentService.GetDoctorAppointments(DoctorId);
         }
 
         private void DoctorPanel_FormClosing(object sender, FormClosingEventArgs e)

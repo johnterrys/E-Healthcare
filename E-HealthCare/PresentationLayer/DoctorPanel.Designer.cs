@@ -115,7 +115,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 317);
+            this.ClientSize = new System.Drawing.Size(630, 304);
             this.Controls.Add(this.profilePanelButton);
             this.Controls.Add(this.appoinmentPanelButton);
             this.Controls.Add(this.appoinmentsGroupBox);
