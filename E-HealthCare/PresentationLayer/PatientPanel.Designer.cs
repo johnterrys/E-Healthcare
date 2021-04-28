@@ -129,6 +129,7 @@
             this.createPrescriptionButton.TabIndex = 8;
             this.createPrescriptionButton.Text = "Create Prescrption";
             this.createPrescriptionButton.UseVisualStyleBackColor = true;
+            this.createPrescriptionButton.Click += new System.EventHandler(this.createPrescriptionButton_Click);
             // 
             // problemLabel
             // 
