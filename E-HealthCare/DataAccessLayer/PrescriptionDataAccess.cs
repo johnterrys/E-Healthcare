@@ -12,7 +12,7 @@ namespace E_HealthCare.DataAccessLayer
     {
         public Prescription GetUserPrescription(string userId)
         {
-            string sql = "SELECT Date,DoctorName,Department,Problem,Advice fROM Prescription WHERE UserId='" + userId;
+            string sql = "SELECT Date,DoctorName,Department,Problem,Advice FROM Prescription WHERE UserId='" + userId;
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using E_HealthCare.BusinessLayer;
+using E_HealthCare.DataAccessLayer.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,16 +36,31 @@ namespace E_HealthCare.PresentationLayer
             }
             else
             {
-
-               /* UserService userService = new UserService();
-                User user = userService.GetUser(nameTextBox.Text, passwordTextBox.Text);
+                //For Testing Purpose (Zihan)
+                UserService userService = new UserService();
+                User user = userService.GetUser(userNameTextBox.Text, passwordTextBox.Text);
                 if (user != null)
                 {
-                    HomePanel homePanel = new HomePanel(user.UserId, user.Username);
+                    DoctorPanel doctorPanel = new DoctorPanel(user.UserId, user.Name);
                     this.Hide();
-                    homePanel.Show();
+                    doctorPanel.Show();
                 }
-                else { MessageBox.Show("You Don't Have Any Account!"); }*/
+                else 
+                { 
+                    MessageBox.Show("You Don't Have Any Account!"); 
+                }
+                //For Testing Purpose (Zihan)
+
+
+                /* UserService userService = new UserService();
+                 User user = userService.GetUser(nameTextBox.Text, passwordTextBox.Text);
+                 if (user != null)
+                 {
+                     HomePanel homePanel = new HomePanel(user.UserId, user.Username);
+                     this.Hide();
+                     homePanel.Show();
+                 }
+                 else { MessageBox.Show("You Don't Have Any Account!"); }*/
             }
         }
     }

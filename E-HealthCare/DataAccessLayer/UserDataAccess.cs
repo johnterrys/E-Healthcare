@@ -10,15 +10,15 @@ namespace E_HealthCare.DataAccessLayer
 {
     class UserDataAccess: DataAccess
     {
-        public User GetUser(string name, string password)
+        public User GetUser(string userName, string password)
         {
-            string sql = "SELECT * fROM Users WHERE Name='" + name + "' AND Password='" + password + "'";
+            string sql = "SELECT * fROM Users WHERE UserName='" + userName + "' AND Password='" + password + "'";
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
                 User user = new User();
                 user.UserId = Convert.ToInt32(reader["UserId"]);
-                user.UserName = reader["UserName"].ToString();
+                user.Name = reader["Name"].ToString();
                 return user;
             }
             return null;

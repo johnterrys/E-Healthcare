@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace E_HealthCare.PresentationLayer
         public void addJSON(List<Medicine> prescription)
         {
             string strResultJson = JsonConvert.SerializeObject(prescription);
-            commentTextBox.Text = strResultJson;
+            File.WriteAllText(@"d:\OOP2\E-Healthcare\E-Healthcare\prescription.json", strResultJson);
         }
 
         private void createButton_Click(object sender, EventArgs e)

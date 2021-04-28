@@ -12,7 +12,7 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class DoctorPanel : Form
     {
-        public DoctorPanel()
+        public DoctorPanel(int userId, string Name)
         {
             InitializeComponent();
         }
