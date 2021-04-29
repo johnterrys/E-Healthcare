@@ -13,15 +13,17 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class PatientPanel : Form
     {
-        public PatientPanel(int patientId, int appointmentId)
+        public PatientPanel(int patientId, int appointmentId, string doctorName)
         {
             InitializeComponent();
             PatientId = patientId;
             AppointmentId = appointmentId;
+            DoctorName = doctorName;
         }
 
         public int PatientId { get; set; }
         public int AppointmentId { get; set; }
+        public string DoctorName { get; set; }
 
         private void PatientPanel_Load(object sender, EventArgs e)
         {
@@ -40,7 +42,7 @@ namespace E_HealthCare.PresentationLayer
 
         private void createPrescriptionButton_Click(object sender, EventArgs e)
         {
-            CreatePrescription createPrescription = new CreatePrescription();
+            CreatePrescription createPrescription = new CreatePrescription(DoctorName, PatientId, AppointmentId);
             createPrescription.Show();
         }
     }

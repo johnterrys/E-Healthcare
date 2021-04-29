@@ -12,7 +12,7 @@ namespace E_HealthCare.DataAccessLayer
     {
         public Prescription GetUserPrescription(string userId)
         {
-            string sql = "SELECT Date,DoctorName,Department,Problem,Advice FROM Prescription WHERE UserId='" + userId;
+            string sql = "SELECT Date,DoctorName,Department,Problem,Advice FROM Prescriptions WHERE UserId='" + userId;
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
@@ -20,7 +20,6 @@ namespace E_HealthCare.DataAccessLayer
                 prescription.Date = reader["Date"].ToString();
                 prescription.DoctorName = reader["DoctorName"].ToString();
                 prescription.Department = reader["Department"].ToString();
-                prescription.Advice = reader["Advice"].ToString();
                 return prescription;
             }
             return null;
@@ -28,8 +27,30 @@ namespace E_HealthCare.DataAccessLayer
 
         public int AddPrescription(Prescription prescription)
         {
-            string sql = "INSERT INTO Prescription(Date,DoctorName,Department,Problem,Advice,UserId) VALUES ('" + prescription.Date + "', '" + prescription.DoctorName + "','" + prescription.Department + "','" + prescription.Problem + "','" + prescription.Advice + "',"+ prescription.UserId + ")";
+            string sql = "INSERT INTO Prescriptions(Date,DoctorName,Department,Problem,PatientId) VALUES ('" + prescription.Date + "', '" + prescription.DoctorName + "','" + prescription.Department + "','" + prescription.Problem + "',"+ prescription.PatientId + ")";
             return this.ExecuteQuery(sql);
+        }
+
+        public int GetPrescriptionId(int patientId, string doctorName)
+        {
+            string sql = "SELECT PrescriptionId FROM Prescriptions WHERE Date LIKE '%" + DateTime.Now.ToString("MM/dd/yyyy") + "%' AND PatientId = "+ patientId + " AND DoctorName LIKE '%"+doctorName+"%'";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["PrescriptionId"]);
+            }
+            return 0;
+        }
+
+        public string GetProblem(int appointmentId)
+        {
+            string sql = "SELECT Problem FROM Appointments WHERE AppointmentId = " + appointmentId;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["Problem"].ToString();
+            }
+            return null;
         }
     }
 }

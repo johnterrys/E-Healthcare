@@ -18,9 +18,11 @@ namespace E_HealthCare.PresentationLayer
         {
             InitializeComponent();
             DoctorId = userId;
+            DoctorName = Name;
         }
 
         public int DoctorId { get; set; }
+        public string DoctorName { get; set; }
         public Appointment SelectedPatient { get; set; }
 
         private void DoctorPanel_Load(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace E_HealthCare.PresentationLayer
         {
             if(SelectedPatient != null)
             {
-                PatientPanel patientPanel = new PatientPanel(SelectedPatient.UserId, SelectedPatient.AppointmentId);
+                PatientPanel patientPanel = new PatientPanel(SelectedPatient.UserId, SelectedPatient.AppointmentId, DoctorName);
                 patientPanel.Show();
             }
         }
