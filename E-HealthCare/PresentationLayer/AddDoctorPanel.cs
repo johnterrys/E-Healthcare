@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_HealthCare.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class AddDoctorPanel : Form
     {
-        public AddDoctorPanel()
+        int adminId;
+        string name;
+        List<string> bloodGroup = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+        List<string> gender = new List<string> { "Male", "Female", "Other" };
+        List<string> designation = new List<string> { "Assist. Professor", "Asso. Professor", "Professor" };
+        List<string> department = new List<string> { "Medicine", "Neurology", "ENT", "Dermatology", "Cardiology" };
+        public AddDoctorPanel(int userId, string name)
         {
             InitializeComponent();
+            this.adminId = userId;
+            this.name = name;
+            bgComboBox.DataSource = bloodGroup;
+            genderComboBox.DataSource = gender;
+            designationComboBox.DataSource = designation;
+            deptComboBox.DataSource = department;
         }
 
         private void AddDoctorPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,6 +94,14 @@ namespace E_HealthCare.PresentationLayer
             {
                 MessageBox.Show("Designation can not be empty");
             }
+            else if (ageTextBox.Text == "")
+            {
+                MessageBox.Show("Age can not be empty");
+            }
+            else if (genderComboBox.Text == "")
+            {
+                MessageBox.Show("Gender can not be empty");
+            }
             else if (deptComboBox.Text == "")
             {
                 MessageBox.Show("Department can not be empty");
@@ -93,18 +114,29 @@ namespace E_HealthCare.PresentationLayer
                 }
                 else
                 {
-                    /*UserService userService = new UserService();
-                    int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
+                    UserService userService = new UserService();
+                    int result = userService.AddNewDoctor(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text,
+                        dobDateTimePicker.Text, bgComboBox.Text, instituteTextBox.Text,degreeCheckedListBox.Text,
+                        designationComboBox.Text,shift1TextBox.Text,shift2TextBox.Text, deptComboBox.Text,
+                        Convert.ToSingle(feeTextBox.Text),genderComboBox.Text,Convert.ToInt32(ageTextBox.Text),
+                        3, phoneTextBox.Text, addressTextBox.Text);
                     if (result > 0)
                     {
-                        MessageBox.Show("You have been Registerd!");
+                        MessageBox.Show("New Doctor Added!");
                         this.Hide();
-                        LoginPanel loginPanel = new LoginPanel();
-                        loginPanel.Show();
+                        AdminPanel adminPanel = new AdminPanel(this.adminId, this.name);
+                        adminPanel.Show();
                     }
-                    else { MessageBox.Show("Registration Error!"); }*/
+                    else { MessageBox.Show("Registration Error!"); }
                 }
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            AdminPanel adminPanel = new AdminPanel(this.adminId, this.name);
+            this.Hide();
+            adminPanel.Show();
         }
     }
 }

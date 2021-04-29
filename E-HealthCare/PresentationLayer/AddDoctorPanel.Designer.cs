@@ -58,12 +58,16 @@ namespace E_HealthCare.PresentationLayer
             this.departmentLabel = new System.Windows.Forms.Label();
             this.shift1Label = new System.Windows.Forms.Label();
             this.designationLabel = new System.Windows.Forms.Label();
-            this.degreeCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.degreeLabel = new System.Windows.Forms.Label();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.confirmTextBox = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.genderLabel = new System.Windows.Forms.Label();
+            this.ageLabel = new System.Windows.Forms.Label();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
+            this.degreeCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.genaralInfoGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -118,7 +122,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.addressLabel.AutoSize = true;
             this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressLabel.Location = new System.Drawing.Point(36, 370);
+            this.addressLabel.Location = new System.Drawing.Point(36, 358);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(99, 25);
             this.addressLabel.TabIndex = 13;
@@ -128,7 +132,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneLabel.Location = new System.Drawing.Point(54, 318);
+            this.phoneLabel.Location = new System.Drawing.Point(54, 302);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(81, 25);
             this.phoneLabel.TabIndex = 14;
@@ -146,6 +150,8 @@ namespace E_HealthCare.PresentationLayer
             // 
             // genaralInfoGroupBox
             // 
+            this.genaralInfoGroupBox.Controls.Add(this.genderComboBox);
+            this.genaralInfoGroupBox.Controls.Add(this.genderLabel);
             this.genaralInfoGroupBox.Controls.Add(this.addressTextBox);
             this.genaralInfoGroupBox.Controls.Add(this.phoneTextBox);
             this.genaralInfoGroupBox.Controls.Add(this.instituteTextBox);
@@ -162,7 +168,7 @@ namespace E_HealthCare.PresentationLayer
             this.genaralInfoGroupBox.Controls.Add(this.addressLabel);
             this.genaralInfoGroupBox.Location = new System.Drawing.Point(29, 49);
             this.genaralInfoGroupBox.Name = "genaralInfoGroupBox";
-            this.genaralInfoGroupBox.Size = new System.Drawing.Size(406, 438);
+            this.genaralInfoGroupBox.Size = new System.Drawing.Size(406, 461);
             this.genaralInfoGroupBox.TabIndex = 16;
             this.genaralInfoGroupBox.TabStop = false;
             this.genaralInfoGroupBox.Text = "Genaral Information";
@@ -170,7 +176,7 @@ namespace E_HealthCare.PresentationLayer
             // addressTextBox
             // 
             this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(154, 367);
+            this.addressTextBox.Location = new System.Drawing.Point(154, 355);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(225, 30);
             this.addressTextBox.TabIndex = 32;
@@ -178,7 +184,7 @@ namespace E_HealthCare.PresentationLayer
             // phoneTextBox
             // 
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTextBox.Location = new System.Drawing.Point(154, 315);
+            this.phoneTextBox.Location = new System.Drawing.Point(154, 299);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(225, 30);
             this.phoneTextBox.TabIndex = 31;
@@ -186,7 +192,7 @@ namespace E_HealthCare.PresentationLayer
             // instituteTextBox
             // 
             this.instituteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instituteTextBox.Location = new System.Drawing.Point(154, 263);
+            this.instituteTextBox.Location = new System.Drawing.Point(154, 248);
             this.instituteTextBox.Name = "instituteTextBox";
             this.instituteTextBox.Size = new System.Drawing.Size(225, 30);
             this.instituteTextBox.TabIndex = 30;
@@ -239,7 +245,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.instituteLabel.AutoSize = true;
             this.instituteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instituteLabel.Location = new System.Drawing.Point(40, 266);
+            this.instituteLabel.Location = new System.Drawing.Point(40, 251);
             this.instituteLabel.Name = "instituteLabel";
             this.instituteLabel.Size = new System.Drawing.Size(95, 25);
             this.instituteLabel.TabIndex = 20;
@@ -248,6 +254,8 @@ namespace E_HealthCare.PresentationLayer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ageTextBox);
+            this.groupBox1.Controls.Add(this.ageLabel);
             this.groupBox1.Controls.Add(this.shift2TextBox);
             this.groupBox1.Controls.Add(this.shift1TextBox);
             this.groupBox1.Controls.Add(this.shift2Label);
@@ -262,7 +270,7 @@ namespace E_HealthCare.PresentationLayer
             this.groupBox1.Controls.Add(this.degreeLabel);
             this.groupBox1.Location = new System.Drawing.Point(490, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 438);
+            this.groupBox1.Size = new System.Drawing.Size(417, 461);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Professional Information";
@@ -270,7 +278,7 @@ namespace E_HealthCare.PresentationLayer
             // shift2TextBox
             // 
             this.shift2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift2TextBox.Location = new System.Drawing.Point(204, 260);
+            this.shift2TextBox.Location = new System.Drawing.Point(204, 278);
             this.shift2TextBox.Name = "shift2TextBox";
             this.shift2TextBox.Size = new System.Drawing.Size(138, 30);
             this.shift2TextBox.TabIndex = 34;
@@ -278,7 +286,7 @@ namespace E_HealthCare.PresentationLayer
             // shift1TextBox
             // 
             this.shift1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift1TextBox.Location = new System.Drawing.Point(204, 198);
+            this.shift1TextBox.Location = new System.Drawing.Point(204, 220);
             this.shift1TextBox.Name = "shift1TextBox";
             this.shift1TextBox.Size = new System.Drawing.Size(138, 30);
             this.shift1TextBox.TabIndex = 33;
@@ -287,7 +295,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.shift2Label.AutoSize = true;
             this.shift2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift2Label.Location = new System.Drawing.Point(61, 263);
+            this.shift2Label.Location = new System.Drawing.Point(61, 281);
             this.shift2Label.Name = "shift2Label";
             this.shift2Label.Size = new System.Drawing.Size(110, 25);
             this.shift2Label.TabIndex = 32;
@@ -297,7 +305,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.deptComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deptComboBox.FormattingEnabled = true;
-            this.deptComboBox.Location = new System.Drawing.Point(204, 319);
+            this.deptComboBox.Location = new System.Drawing.Point(204, 338);
             this.deptComboBox.Name = "deptComboBox";
             this.deptComboBox.Size = new System.Drawing.Size(138, 28);
             this.deptComboBox.TabIndex = 31;
@@ -306,7 +314,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.designationComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.designationComboBox.FormattingEnabled = true;
-            this.designationComboBox.Location = new System.Drawing.Point(204, 146);
+            this.designationComboBox.Location = new System.Drawing.Point(204, 166);
             this.designationComboBox.Name = "designationComboBox";
             this.designationComboBox.Size = new System.Drawing.Size(138, 28);
             this.designationComboBox.TabIndex = 30;
@@ -314,7 +322,7 @@ namespace E_HealthCare.PresentationLayer
             // feeTextBox
             // 
             this.feeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeTextBox.Location = new System.Drawing.Point(204, 378);
+            this.feeTextBox.Location = new System.Drawing.Point(204, 393);
             this.feeTextBox.Name = "feeTextBox";
             this.feeTextBox.Size = new System.Drawing.Size(138, 30);
             this.feeTextBox.TabIndex = 29;
@@ -323,7 +331,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.feeLabel.AutoSize = true;
             this.feeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feeLabel.Location = new System.Drawing.Point(115, 381);
+            this.feeLabel.Location = new System.Drawing.Point(115, 396);
             this.feeLabel.Name = "feeLabel";
             this.feeLabel.Size = new System.Drawing.Size(56, 25);
             this.feeLabel.TabIndex = 28;
@@ -333,7 +341,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.departmentLabel.AutoSize = true;
             this.departmentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentLabel.Location = new System.Drawing.Point(41, 315);
+            this.departmentLabel.Location = new System.Drawing.Point(41, 337);
             this.departmentLabel.Name = "departmentLabel";
             this.departmentLabel.Size = new System.Drawing.Size(130, 25);
             this.departmentLabel.TabIndex = 27;
@@ -343,7 +351,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.shift1Label.AutoSize = true;
             this.shift1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shift1Label.Location = new System.Drawing.Point(61, 201);
+            this.shift1Label.Location = new System.Drawing.Point(61, 223);
             this.shift1Label.Name = "shift1Label";
             this.shift1Label.Size = new System.Drawing.Size(110, 25);
             this.shift1Label.TabIndex = 25;
@@ -353,25 +361,11 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.designationLabel.AutoSize = true;
             this.designationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.designationLabel.Location = new System.Drawing.Point(38, 144);
+            this.designationLabel.Location = new System.Drawing.Point(41, 165);
             this.designationLabel.Name = "designationLabel";
             this.designationLabel.Size = new System.Drawing.Size(133, 25);
             this.designationLabel.TabIndex = 24;
             this.designationLabel.Text = "Designation:";
-            // 
-            // degreeCheckedListBox
-            // 
-            this.degreeCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.degreeCheckedListBox.FormattingEnabled = true;
-            this.degreeCheckedListBox.Items.AddRange(new object[] {
-            "M.B.B.S",
-            "MD",
-            "MS",
-            "FRCP"});
-            this.degreeCheckedListBox.Location = new System.Drawing.Point(204, 45);
-            this.degreeCheckedListBox.Name = "degreeCheckedListBox";
-            this.degreeCheckedListBox.Size = new System.Drawing.Size(138, 70);
-            this.degreeCheckedListBox.TabIndex = 23;
             // 
             // degreeLabel
             // 
@@ -421,6 +415,58 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.TabIndex = 19;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // genderLabel
+            // 
+            this.genderLabel.AutoSize = true;
+            this.genderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLabel.Location = new System.Drawing.Point(36, 409);
+            this.genderLabel.Name = "genderLabel";
+            this.genderLabel.Size = new System.Drawing.Size(90, 25);
+            this.genderLabel.TabIndex = 33;
+            this.genderLabel.Text = "Gender:";
+            // 
+            // ageLabel
+            // 
+            this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.Location = new System.Drawing.Point(113, 108);
+            this.ageLabel.Name = "ageLabel";
+            this.ageLabel.Size = new System.Drawing.Size(58, 25);
+            this.ageLabel.TabIndex = 35;
+            this.ageLabel.Text = "Age:";
+            // 
+            // ageTextBox
+            // 
+            this.ageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageTextBox.Location = new System.Drawing.Point(204, 105);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(138, 30);
+            this.ageTextBox.TabIndex = 36;
+            // 
+            // degreeCheckedListBox
+            // 
+            this.degreeCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.degreeCheckedListBox.FormattingEnabled = true;
+            this.degreeCheckedListBox.Items.AddRange(new object[] {
+            "M.B.B.S",
+            "MD",
+            "MS",
+            "FRCP"});
+            this.degreeCheckedListBox.Location = new System.Drawing.Point(204, 30);
+            this.degreeCheckedListBox.Name = "degreeCheckedListBox";
+            this.degreeCheckedListBox.Size = new System.Drawing.Size(138, 48);
+            this.degreeCheckedListBox.TabIndex = 23;
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderComboBox.FormattingEnabled = true;
+            this.genderComboBox.Location = new System.Drawing.Point(154, 410);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Size = new System.Drawing.Size(138, 28);
+            this.genderComboBox.TabIndex = 34;
             // 
             // AddDoctorPanel
             // 
@@ -469,7 +515,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label shift1Label;
         private System.Windows.Forms.Label designationLabel;
-        private System.Windows.Forms.CheckedListBox degreeCheckedListBox;
         private System.Windows.Forms.Label degreeLabel;
         private System.Windows.Forms.Label confirmPasswordLabel;
         private System.Windows.Forms.TextBox confirmTextBox;
@@ -486,5 +531,10 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label shift2Label;
         private System.Windows.Forms.TextBox shift2TextBox;
         private System.Windows.Forms.TextBox shift1TextBox;
+        private System.Windows.Forms.Label genderLabel;
+        private System.Windows.Forms.TextBox ageTextBox;
+        private System.Windows.Forms.Label ageLabel;
+        private System.Windows.Forms.CheckedListBox degreeCheckedListBox;
+        private System.Windows.Forms.ComboBox genderComboBox;
     }
 }

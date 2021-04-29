@@ -13,12 +13,12 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class AdminPanel : Form
     {
-        int userId;
+        int adminId;
         string name;
         public AdminPanel(int userId, string name)
         {
             InitializeComponent();
-            this.userId = userId;
+            this.adminId = userId;
             this.name = name;
         }
 
@@ -43,14 +43,23 @@ namespace E_HealthCare.PresentationLayer
         {
             UserService userService = new UserService();
             usersGridView.DataSource = userService.GetAdminUser();
+            UserService userService1 = new UserService();
+            doctorDataGridView.DataSource = userService1.GetAdminDoctor();
             welcomeLabel.Text = this.name;
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(this.userId, this.name);
+            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(this.adminId, this.name);
             this.Hide();
             userRegistrationPanel.Show();
+        }
+
+        private void addDoctorButton_Click(object sender, EventArgs e)
+        {
+            AddDoctorPanel addDoctorPanel = new AddDoctorPanel(this.adminId, this.name);
+            this.Hide();
+            addDoctorPanel.Show();
         }
     }
 }
