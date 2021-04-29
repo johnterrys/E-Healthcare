@@ -19,6 +19,7 @@ namespace E_HealthCare.DataAccessLayer
                 User user = new User();
                 user.UserId = Convert.ToInt32(reader["UserId"]);
                 user.Name = reader["Name"].ToString();
+                user.Role = Convert.ToInt32(reader["Role"]);
                 return user;
             }
             return null;
@@ -49,13 +50,13 @@ namespace E_HealthCare.DataAccessLayer
 
         public int AddUser(User user)
         {
-            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Phone,Address,Password) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Phone + "','" + user.Address + "', '" + user.Password + "')";
+            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Phone,Address,Password,Role,Age,Gender) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Phone + "','" + user.Address + "','" + user.Password + "'," + user.Role +","+user.Age+",'"+user.Gender+"'"+")";
             return this.ExecuteQuery(sql);
         }
 
         public int AddDoctor(User user)
         {
-            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Phone,Address,Department,Qualification,Institute,Designation,Fees,Password,ShiftOne,ShiftTwo,Role) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Phone + "','" + user.Address + "','" + user.Department + "','" + user.Qualification + "','" + user.Institute + "','" + user.Designation + "',"+ user.Fees+",'" + user.Password + "','" +user.ShiftOne + "', '" + user.ShiftTwo + "',"+user.Role+")";
+            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Gender,Phone,Address,Department,Qualification,Institute,Designation,Fees,Password,ShiftOne,ShiftTwo,Role,Age,Gender) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Phone + "','" + user.Address + "','" + user.Department + "','" + user.Qualification + "','" + user.Institute + "','" + user.Designation + "',"+ user.Fees+",'" + user.Password + "','" +user.ShiftOne + "', '" + user.ShiftTwo + "',"+ user.Role + "," + user.Age + ",'" + user.Gender + "'" + ")";
             return this.ExecuteQuery(sql);
         }
     }

@@ -12,7 +12,7 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class UserPanel : Form
     {
-        public UserPanel()
+        public UserPanel( int userId, string name)
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace E_HealthCare.PresentationLayer
         private void UserPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginPanel loginPanel = new LoginPanel();
+            this.Hide();
+            loginPanel.Show();
         }
     }
 }

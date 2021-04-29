@@ -68,13 +68,14 @@ namespace E_HealthCare.PresentationLayer
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(638, 599);
+            this.logoutButton.Location = new System.Drawing.Point(625, 584);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(77, 32);
+            this.logoutButton.Size = new System.Drawing.Size(94, 42);
             this.logoutButton.TabIndex = 20;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // createAppointmentButton
             // 
@@ -114,7 +115,7 @@ namespace E_HealthCare.PresentationLayer
             this.orderByButton.Location = new System.Drawing.Point(624, 370);
             this.orderByButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.orderByButton.Name = "orderByButton";
-            this.orderByButton.Size = new System.Drawing.Size(73, 71);
+            this.orderByButton.Size = new System.Drawing.Size(77, 83);
             this.orderByButton.TabIndex = 28;
             this.orderByButton.Text = "Order By Date";
             this.orderByButton.UseVisualStyleBackColor = true;
@@ -157,7 +158,7 @@ namespace E_HealthCare.PresentationLayer
             this.findButton.Location = new System.Drawing.Point(413, 517);
             this.findButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(110, 70);
+            this.findButton.Size = new System.Drawing.Size(132, 70);
             this.findButton.TabIndex = 30;
             this.findButton.Text = "Find Ambulance";
             this.findButton.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@ namespace E_HealthCare.PresentationLayer
             this.dashboardButton.Location = new System.Drawing.Point(589, 39);
             this.dashboardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboardButton.Name = "dashboardButton";
-            this.dashboardButton.Size = new System.Drawing.Size(126, 32);
+            this.dashboardButton.Size = new System.Drawing.Size(137, 35);
             this.dashboardButton.TabIndex = 31;
             this.dashboardButton.Text = "Dashboard";
             this.dashboardButton.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 652);
+            this.ClientSize = new System.Drawing.Size(782, 652);
             this.Controls.Add(this.dashboardButton);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.bloodRequestButton);

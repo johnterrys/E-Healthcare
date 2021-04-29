@@ -39,15 +39,20 @@ namespace E_HealthCare.PresentationLayer
                 //For Testing Purpose (Zihan)
                 UserService userService = new UserService();
                 User user = userService.GetUser(userNameTextBox.Text, passwordTextBox.Text);
-                if (user != null)
+                if (user != null && user.Role == 3)
                 {
                     DoctorPanel doctorPanel = new DoctorPanel(user.UserId, user.Name);
                     this.Hide();
                     doctorPanel.Show();
                 }
-                else 
-                { 
-                    MessageBox.Show("You Don't Have Any Account!"); 
+                else if (user != null && user.Role == 2)
+                {
+                    UserPanel userPanel = new UserPanel(user.UserId, user.Name);
+                    this.Hide();
+                    userPanel.Show();
+                }
+                else {
+                    MessageBox.Show("You Don't Have Any Account!");
                 }
                 //For Testing Purpose (Zihan)
 
@@ -62,6 +67,13 @@ namespace E_HealthCare.PresentationLayer
                  }
                  else { MessageBox.Show("You Don't Have Any Account!"); }*/
             }
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel();
+            this.Hide();
+            userRegistrationPanel.Show();
         }
     }
 }

@@ -50,11 +50,19 @@ namespace E_HealthCare.PresentationLayer
             this.termsCheckBox = new System.Windows.Forms.CheckBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.ageLabel = new System.Windows.Forms.Label();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.genaralInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // genaralInfoGroupBox
             // 
+            this.genaralInfoGroupBox.Controls.Add(this.genderComboBox);
+            this.genaralInfoGroupBox.Controls.Add(this.label1);
+            this.genaralInfoGroupBox.Controls.Add(this.ageTextBox);
+            this.genaralInfoGroupBox.Controls.Add(this.ageLabel);
             this.genaralInfoGroupBox.Controls.Add(this.confirmPasswordLabel);
             this.genaralInfoGroupBox.Controls.Add(this.passwordLabel);
             this.genaralInfoGroupBox.Controls.Add(this.confirmTextBox);
@@ -71,9 +79,9 @@ namespace E_HealthCare.PresentationLayer
             this.genaralInfoGroupBox.Controls.Add(this.userNameTextBox);
             this.genaralInfoGroupBox.Controls.Add(this.phoneLabel);
             this.genaralInfoGroupBox.Controls.Add(this.addressLabel);
-            this.genaralInfoGroupBox.Location = new System.Drawing.Point(79, 64);
+            this.genaralInfoGroupBox.Location = new System.Drawing.Point(79, 55);
             this.genaralInfoGroupBox.Name = "genaralInfoGroupBox";
-            this.genaralInfoGroupBox.Size = new System.Drawing.Size(495, 471);
+            this.genaralInfoGroupBox.Size = new System.Drawing.Size(495, 531);
             this.genaralInfoGroupBox.TabIndex = 18;
             this.genaralInfoGroupBox.TabStop = false;
             this.genaralInfoGroupBox.Text = "Genaral Information";
@@ -82,7 +90,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.confirmPasswordLabel.AutoSize = true;
             this.confirmPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(15, 411);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(15, 476);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
             this.confirmPasswordLabel.Size = new System.Drawing.Size(188, 25);
             this.confirmPasswordLabel.TabIndex = 33;
@@ -92,7 +100,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(83, 355);
+            this.passwordLabel.Location = new System.Drawing.Point(83, 432);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(113, 25);
             this.passwordLabel.TabIndex = 34;
@@ -101,7 +109,7 @@ namespace E_HealthCare.PresentationLayer
             // confirmTextBox
             // 
             this.confirmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmTextBox.Location = new System.Drawing.Point(249, 408);
+            this.confirmTextBox.Location = new System.Drawing.Point(249, 473);
             this.confirmTextBox.Name = "confirmTextBox";
             this.confirmTextBox.Size = new System.Drawing.Size(225, 30);
             this.confirmTextBox.TabIndex = 35;
@@ -109,7 +117,7 @@ namespace E_HealthCare.PresentationLayer
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(249, 352);
+            this.passwordTextBox.Location = new System.Drawing.Point(249, 429);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(225, 30);
             this.passwordTextBox.TabIndex = 36;
@@ -117,7 +125,7 @@ namespace E_HealthCare.PresentationLayer
             // addressTextBox
             // 
             this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(249, 305);
+            this.addressTextBox.Location = new System.Drawing.Point(249, 387);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(225, 30);
             this.addressTextBox.TabIndex = 32;
@@ -125,7 +133,7 @@ namespace E_HealthCare.PresentationLayer
             // phoneTextBox
             // 
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTextBox.Location = new System.Drawing.Point(249, 258);
+            this.phoneTextBox.Location = new System.Drawing.Point(249, 344);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(225, 30);
             this.phoneTextBox.TabIndex = 31;
@@ -206,7 +214,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneLabel.Location = new System.Drawing.Point(122, 261);
+            this.phoneLabel.Location = new System.Drawing.Point(122, 347);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(81, 25);
             this.phoneLabel.TabIndex = 14;
@@ -216,7 +224,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.addressLabel.AutoSize = true;
             this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressLabel.Location = new System.Drawing.Point(104, 308);
+            this.addressLabel.Location = new System.Drawing.Point(104, 390);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(99, 25);
             this.addressLabel.TabIndex = 13;
@@ -235,7 +243,7 @@ namespace E_HealthCare.PresentationLayer
             // termsCheckBox
             // 
             this.termsCheckBox.AutoSize = true;
-            this.termsCheckBox.Location = new System.Drawing.Point(249, 553);
+            this.termsCheckBox.Location = new System.Drawing.Point(238, 612);
             this.termsCheckBox.Name = "termsCheckBox";
             this.termsCheckBox.Size = new System.Drawing.Size(210, 21);
             this.termsCheckBox.TabIndex = 19;
@@ -246,7 +254,7 @@ namespace E_HealthCare.PresentationLayer
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(286, 592);
+            this.registerButton.Location = new System.Drawing.Point(280, 654);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(106, 38);
             this.registerButton.TabIndex = 20;
@@ -264,11 +272,47 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             // 
+            // ageLabel
+            // 
+            this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.Location = new System.Drawing.Point(145, 301);
+            this.ageLabel.Name = "ageLabel";
+            this.ageLabel.Size = new System.Drawing.Size(58, 25);
+            this.ageLabel.TabIndex = 37;
+            this.ageLabel.Text = "Age:";
+            // 
+            // ageTextBox
+            // 
+            this.ageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageTextBox.Location = new System.Drawing.Point(249, 298);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(225, 30);
+            this.ageTextBox.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(113, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Gender:";
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.FormattingEnabled = true;
+            this.genderComboBox.Location = new System.Drawing.Point(249, 251);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Size = new System.Drawing.Size(225, 24);
+            this.genderComboBox.TabIndex = 40;
+            // 
             // UserRegistrationPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 651);
+            this.ClientSize = new System.Drawing.Size(671, 704);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.termsCheckBox);
@@ -308,5 +352,9 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.CheckBox termsCheckBox;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label ageLabel;
+        private System.Windows.Forms.TextBox ageTextBox;
+        private System.Windows.Forms.ComboBox genderComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }

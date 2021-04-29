@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_HealthCare.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class UserRegistrationPanel : Form
     {
+        List<string> bloodGroup = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+        List<string> gender = new List<string> { "Male", "Female", "Other"};
         public UserRegistrationPanel()
         {
             InitializeComponent();
             registerButton.Enabled = false;
+            bgComboBox.DataSource = bloodGroup;
+            genderComboBox.DataSource = gender;
         }
 
         private void UserRegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,6 +46,14 @@ namespace E_HealthCare.PresentationLayer
             {
                 MessageBox.Show("Blood Group can not be empty");
             }
+            else if (genderComboBox.Text == "")
+            {
+                MessageBox.Show("Gender can not be empty");
+            }
+            else if (ageTextBox.Text == "")
+            {
+                MessageBox.Show("Age can not be empty");
+            }
             else if (phoneTextBox.Text == "")
             {
                 MessageBox.Show("Phone can not be empty");
@@ -61,8 +74,8 @@ namespace E_HealthCare.PresentationLayer
                 }
                 else
                 {
-                    /*UserService userService = new UserService();
-                    int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text);
+                    UserService userService = new UserService();
+                    int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text, dobDateTimePicker.Text, bgComboBox.Text,genderComboBox.Text,Convert.ToInt32(ageTextBox.Text),2,phoneTextBox.Text,addressTextBox.Text);
                     if (result > 0)
                     {
                         MessageBox.Show("You have been Registerd!");
@@ -70,7 +83,7 @@ namespace E_HealthCare.PresentationLayer
                         LoginPanel loginPanel = new LoginPanel();
                         loginPanel.Show();
                     }
-                    else { MessageBox.Show("Registration Error!"); }*/
+                    else { MessageBox.Show("Registration Error!"); }
                 }
             }
         }

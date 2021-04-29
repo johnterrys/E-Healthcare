@@ -13,6 +13,7 @@ namespace E_HealthCare.DataAccessLayer.Entity
         public string UserName { get; set; }
         public string DoB { get; set; }
         public int Age { get; set; } //added by (zihan) for PatientPanel
+        public string Gender { get; set; }
         public string BloodGroup { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
