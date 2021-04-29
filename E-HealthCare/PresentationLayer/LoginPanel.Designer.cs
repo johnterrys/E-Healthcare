@@ -43,7 +43,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(138, 98);
+            this.userNameLabel.Location = new System.Drawing.Point(184, 98);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(120, 25);
             this.userNameLabel.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(145, 176);
+            this.passwordLabel.Location = new System.Drawing.Point(191, 176);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(113, 25);
             this.passwordLabel.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace E_HealthCare.PresentationLayer
             // userNameTextBox
             // 
             this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(278, 95);
+            this.userNameTextBox.Location = new System.Drawing.Point(342, 98);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(285, 30);
             this.userNameTextBox.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace E_HealthCare.PresentationLayer
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(278, 173);
+            this.passwordTextBox.Location = new System.Drawing.Point(342, 173);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(285, 30);
             this.passwordTextBox.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace E_HealthCare.PresentationLayer
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(312, 269);
+            this.loginButton.Location = new System.Drawing.Point(405, 269);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(94, 43);
             this.loginButton.TabIndex = 4;
@@ -89,9 +89,9 @@ namespace E_HealthCare.PresentationLayer
             // registerButton
             // 
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(61, 352);
+            this.registerButton.Location = new System.Drawing.Point(45, 352);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(254, 29);
+            this.registerButton.Size = new System.Drawing.Size(372, 29);
             this.registerButton.TabIndex = 5;
             this.registerButton.Text = "Don\'t have account?";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.ehealthcareLabel.AutoSize = true;
             this.ehealthcareLabel.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ehealthcareLabel.Location = new System.Drawing.Point(282, 9);
+            this.ehealthcareLabel.Location = new System.Drawing.Point(373, 9);
             this.ehealthcareLabel.Name = "ehealthcareLabel";
             this.ehealthcareLabel.Size = new System.Drawing.Size(166, 24);
             this.ehealthcareLabel.TabIndex = 6;
@@ -110,9 +110,9 @@ namespace E_HealthCare.PresentationLayer
             // providerRegisterButton
             // 
             this.providerRegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.providerRegisterButton.Location = new System.Drawing.Point(403, 352);
+            this.providerRegisterButton.Location = new System.Drawing.Point(477, 352);
             this.providerRegisterButton.Name = "providerRegisterButton";
-            this.providerRegisterButton.Size = new System.Drawing.Size(261, 29);
+            this.providerRegisterButton.Size = new System.Drawing.Size(361, 29);
             this.providerRegisterButton.TabIndex = 7;
             this.providerRegisterButton.Text = "Want to Provide Ambulance?";
             this.providerRegisterButton.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 461);
+            this.ClientSize = new System.Drawing.Size(904, 461);
             this.Controls.Add(this.providerRegisterButton);
             this.Controls.Add(this.ehealthcareLabel);
             this.Controls.Add(this.registerButton);

@@ -25,6 +25,24 @@ namespace E_HealthCare.DataAccessLayer
             return null;
         }
 
+        public List<User> GetAdminUser()
+        {
+            string sql = "SELECT UserId,Name,Age,Phone,Address FROM Users WHERE Role="+2;
+            SqlDataReader reader = this.GetData(sql);
+            List<User> users = new List<User>();
+            while (reader.Read())
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(reader["UserId"]);
+                user.Name = reader["Name"].ToString();
+                user.Age = Convert.ToInt32(reader["Age"]);
+                user.Phone = reader["Phone"].ToString();
+                user.Address = reader["Address"].ToString();
+                users.Add(user);
+            }
+            return users;
+        }
+
         //Created by (zihan) for PatientPanel 
         public User GetPatient(int userId, int appointmentId)
         {

@@ -13,8 +13,12 @@ namespace E_HealthCare.BusinessLayer
         UserDataAccess userDataAccess;
         public UserService()
         {
-
             this.userDataAccess = new UserDataAccess();
+        }
+
+        public List<User> GetAdminUser()
+        {
+            return this.userDataAccess.GetAdminUser();
         }
         public User GetUser(string userName, string password)
         {

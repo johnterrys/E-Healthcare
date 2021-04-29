@@ -115,13 +115,14 @@ namespace E_HealthCare.PresentationLayer
             // logoutButton
             // 
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(1243, 46);
+            this.logoutButton.Location = new System.Drawing.Point(1212, 41);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(77, 32);
+            this.logoutButton.Size = new System.Drawing.Size(97, 32);
             this.logoutButton.TabIndex = 12;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // ambulanceDataGridView
             // 
@@ -150,7 +151,7 @@ namespace E_HealthCare.PresentationLayer
             this.addDoctorButton.Location = new System.Drawing.Point(491, 102);
             this.addDoctorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addDoctorButton.Name = "addDoctorButton";
-            this.addDoctorButton.Size = new System.Drawing.Size(93, 58);
+            this.addDoctorButton.Size = new System.Drawing.Size(111, 58);
             this.addDoctorButton.TabIndex = 15;
             this.addDoctorButton.Text = "Add Doctor";
             this.addDoctorButton.UseVisualStyleBackColor = true;
@@ -161,7 +162,7 @@ namespace E_HealthCare.PresentationLayer
             this.removeDoctorButton.Location = new System.Drawing.Point(491, 194);
             this.removeDoctorButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeDoctorButton.Name = "removeDoctorButton";
-            this.removeDoctorButton.Size = new System.Drawing.Size(93, 58);
+            this.removeDoctorButton.Size = new System.Drawing.Size(111, 58);
             this.removeDoctorButton.TabIndex = 16;
             this.removeDoctorButton.Text = "Remove Doctor";
             this.removeDoctorButton.UseVisualStyleBackColor = true;
@@ -172,7 +173,7 @@ namespace E_HealthCare.PresentationLayer
             this.createAppointmentButton.Location = new System.Drawing.Point(477, 384);
             this.createAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.createAppointmentButton.Name = "createAppointmentButton";
-            this.createAppointmentButton.Size = new System.Drawing.Size(125, 60);
+            this.createAppointmentButton.Size = new System.Drawing.Size(135, 60);
             this.createAppointmentButton.TabIndex = 17;
             this.createAppointmentButton.Text = "Make Appointment";
             this.createAppointmentButton.UseVisualStyleBackColor = true;
@@ -183,7 +184,7 @@ namespace E_HealthCare.PresentationLayer
             this.cancelAppointmentButton.Location = new System.Drawing.Point(477, 474);
             this.cancelAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelAppointmentButton.Name = "cancelAppointmentButton";
-            this.cancelAppointmentButton.Size = new System.Drawing.Size(125, 60);
+            this.cancelAppointmentButton.Size = new System.Drawing.Size(135, 67);
             this.cancelAppointmentButton.TabIndex = 18;
             this.cancelAppointmentButton.Text = "Cancel Appointment";
             this.cancelAppointmentButton.UseVisualStyleBackColor = true;
@@ -226,7 +227,7 @@ namespace E_HealthCare.PresentationLayer
             this.availableAmbulenceButton.Location = new System.Drawing.Point(1144, 102);
             this.availableAmbulenceButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.availableAmbulenceButton.Name = "availableAmbulenceButton";
-            this.availableAmbulenceButton.Size = new System.Drawing.Size(125, 60);
+            this.availableAmbulenceButton.Size = new System.Drawing.Size(139, 60);
             this.availableAmbulenceButton.TabIndex = 22;
             this.availableAmbulenceButton.Text = "Available Ambulence";
             this.availableAmbulenceButton.UseVisualStyleBackColor = true;
@@ -237,7 +238,7 @@ namespace E_HealthCare.PresentationLayer
             this.removeProviderButton.Location = new System.Drawing.Point(1144, 192);
             this.removeProviderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeProviderButton.Name = "removeProviderButton";
-            this.removeProviderButton.Size = new System.Drawing.Size(125, 60);
+            this.removeProviderButton.Size = new System.Drawing.Size(139, 60);
             this.removeProviderButton.TabIndex = 23;
             this.removeProviderButton.Text = "Remove Provider";
             this.removeProviderButton.UseVisualStyleBackColor = true;
@@ -248,16 +249,17 @@ namespace E_HealthCare.PresentationLayer
             this.addUserButton.Location = new System.Drawing.Point(1144, 384);
             this.addUserButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(106, 60);
+            this.addUserButton.Size = new System.Drawing.Size(122, 60);
             this.addUserButton.TabIndex = 24;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // viewDoctorByLabel
             // 
             this.viewDoctorByLabel.AutoSize = true;
             this.viewDoctorByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewDoctorByLabel.Location = new System.Drawing.Point(63, 264);
+            this.viewDoctorByLabel.Location = new System.Drawing.Point(53, 264);
             this.viewDoctorByLabel.Name = "viewDoctorByLabel";
             this.viewDoctorByLabel.Size = new System.Drawing.Size(221, 18);
             this.viewDoctorByLabel.TabIndex = 25;
@@ -293,7 +295,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.findDoctorLabel.AutoSize = true;
             this.findDoctorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findDoctorLabel.Location = new System.Drawing.Point(63, 311);
+            this.findDoctorLabel.Location = new System.Drawing.Point(53, 306);
             this.findDoctorLabel.Name = "findDoctorLabel";
             this.findDoctorLabel.Size = new System.Drawing.Size(159, 18);
             this.findDoctorLabel.TabIndex = 29;
@@ -302,10 +304,10 @@ namespace E_HealthCare.PresentationLayer
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(184, 547);
+            this.updateButton.Location = new System.Drawing.Point(188, 548);
             this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(125, 60);
+            this.updateButton.Size = new System.Drawing.Size(147, 66);
             this.updateButton.TabIndex = 30;
             this.updateButton.Text = "Update Appointment";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -313,10 +315,10 @@ namespace E_HealthCare.PresentationLayer
             // removeButton
             // 
             this.removeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeButton.Location = new System.Drawing.Point(1144, 474);
+            this.removeButton.Location = new System.Drawing.Point(1144, 481);
             this.removeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(106, 60);
+            this.removeButton.Size = new System.Drawing.Size(122, 60);
             this.removeButton.TabIndex = 31;
             this.removeButton.Text = "Remove User";
             this.removeButton.UseVisualStyleBackColor = true;
@@ -325,7 +327,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 640);
+            this.ClientSize = new System.Drawing.Size(1352, 640);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.findDoctorLabel);
@@ -356,6 +358,7 @@ namespace E_HealthCare.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.doctorDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataGridView)).EndInit();

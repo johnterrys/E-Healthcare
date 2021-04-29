@@ -15,12 +15,16 @@ namespace E_HealthCare.PresentationLayer
     {
         List<string> bloodGroup = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
         List<string> gender = new List<string> { "Male", "Female", "Other"};
-        public UserRegistrationPanel()
+        int adminId;
+        string adminName;
+        public UserRegistrationPanel(int userId, string name)
         {
             InitializeComponent();
             registerButton.Enabled = false;
             bgComboBox.DataSource = bloodGroup;
             genderComboBox.DataSource = gender;
+            this.adminId = userId;
+            this.adminName = name;
         }
 
         private void UserRegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,10 +82,19 @@ namespace E_HealthCare.PresentationLayer
                     int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text, dobDateTimePicker.Text, bgComboBox.Text,genderComboBox.Text,Convert.ToInt32(ageTextBox.Text),2,phoneTextBox.Text,addressTextBox.Text);
                     if (result > 0)
                     {
-                        MessageBox.Show("You have been Registerd!");
-                        this.Hide();
-                        LoginPanel loginPanel = new LoginPanel();
-                        loginPanel.Show();
+                        if (this.adminId == 0)
+                        {
+                            MessageBox.Show("You have been Registerd!");
+                            this.Hide();
+                            LoginPanel loginPanel = new LoginPanel();
+                            loginPanel.Show();
+                        }
+                        else {
+                            MessageBox.Show("User Added!");
+                            this.Hide();
+                            AdminPanel adminPanel = new AdminPanel(this.adminId, this.adminName);
+                            adminPanel.Show();
+                        }
                     }
                     else { MessageBox.Show("Registration Error!"); }
                 }
@@ -96,6 +109,22 @@ namespace E_HealthCare.PresentationLayer
             }
             else
                 registerButton.Enabled = false;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            if (this.adminId == 0)
+            {
+                LoginPanel loginPanel = new LoginPanel();
+                this.Hide();
+                loginPanel.Show();
+            }
+            else
+            {
+                AdminPanel adminPanel = new AdminPanel(this.adminId, this.adminName);
+                this.Hide();
+                adminPanel.Show();
+            }
         }
     }
 }

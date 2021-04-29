@@ -30,6 +30,10 @@ namespace E_HealthCare.PresentationLayer
         private void InitializeComponent()
         {
             this.genaralInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
+            this.ageLabel = new System.Windows.Forms.Label();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.confirmTextBox = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@ namespace E_HealthCare.PresentationLayer
             this.termsCheckBox = new System.Windows.Forms.CheckBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.ageLabel = new System.Windows.Forms.Label();
-            this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.genaralInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,42 @@ namespace E_HealthCare.PresentationLayer
             this.genaralInfoGroupBox.TabIndex = 18;
             this.genaralInfoGroupBox.TabStop = false;
             this.genaralInfoGroupBox.Text = "Genaral Information";
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.FormattingEnabled = true;
+            this.genderComboBox.Location = new System.Drawing.Point(249, 251);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Size = new System.Drawing.Size(225, 24);
+            this.genderComboBox.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(113, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Gender:";
+            // 
+            // ageTextBox
+            // 
+            this.ageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageTextBox.Location = new System.Drawing.Point(249, 298);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(225, 30);
+            this.ageTextBox.TabIndex = 38;
+            // 
+            // ageLabel
+            // 
+            this.ageLabel.AutoSize = true;
+            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageLabel.Location = new System.Drawing.Point(145, 301);
+            this.ageLabel.Name = "ageLabel";
+            this.ageLabel.Size = new System.Drawing.Size(58, 25);
+            this.ageLabel.TabIndex = 37;
+            this.ageLabel.Text = "Age:";
             // 
             // confirmPasswordLabel
             // 
@@ -271,42 +307,7 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.TabIndex = 21;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
-            // 
-            // ageLabel
-            // 
-            this.ageLabel.AutoSize = true;
-            this.ageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageLabel.Location = new System.Drawing.Point(145, 301);
-            this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(58, 25);
-            this.ageLabel.TabIndex = 37;
-            this.ageLabel.Text = "Age:";
-            // 
-            // ageTextBox
-            // 
-            this.ageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageTextBox.Location = new System.Drawing.Point(249, 298);
-            this.ageTextBox.Name = "ageTextBox";
-            this.ageTextBox.Size = new System.Drawing.Size(225, 30);
-            this.ageTextBox.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Gender:";
-            // 
-            // genderComboBox
-            // 
-            this.genderComboBox.FormattingEnabled = true;
-            this.genderComboBox.Location = new System.Drawing.Point(249, 251);
-            this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(225, 24);
-            this.genderComboBox.TabIndex = 40;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // UserRegistrationPanel
             // 
