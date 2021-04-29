@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_HealthCare.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,24 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class PatientPanel : Form
     {
-        public PatientPanel()
+        public PatientPanel(int patientId, int appointmentId)
         {
             InitializeComponent();
+            PatientId = patientId;
+            AppointmentId = appointmentId;
         }
+
+        public int PatientId { get; set; }
+        public int AppointmentId { get; set; }
 
         private void PatientPanel_Load(object sender, EventArgs e)
         {
-            
+            UserService userService = new UserService();
+            var patient = userService.GetPatient(PatientId, AppointmentId);
+            namelabel.Text = patient.Name;
+            problemLabel.Text = patient.Problem;
+            bloodGroupLabel.Text = patient.BloodGroup;
+            ageLabel.Text = patient.Age.ToString();
         }
 
         private void PatientPanel_FormClosing(object sender, FormClosingEventArgs e)

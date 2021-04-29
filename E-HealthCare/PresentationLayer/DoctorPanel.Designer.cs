@@ -36,6 +36,7 @@ namespace E_HealthCare.PresentationLayer
             this.appoinmentsDataGridView = new System.Windows.Forms.DataGridView();
             this.appoinmentPanelButton = new System.Windows.Forms.Button();
             this.profilePanelButton = new System.Windows.Forms.Button();
+            this.selector = new System.Windows.Forms.Label();
             this.appoinmentsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appoinmentsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +64,7 @@ namespace E_HealthCare.PresentationLayer
             this.checkButton.TabIndex = 3;
             this.checkButton.Text = "Check";
             this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // oldNewTriggerButton
             // 
@@ -89,8 +91,10 @@ namespace E_HealthCare.PresentationLayer
             this.appoinmentsDataGridView.Location = new System.Drawing.Point(4, 20);
             this.appoinmentsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.appoinmentsDataGridView.Name = "appoinmentsDataGridView";
+            this.appoinmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appoinmentsDataGridView.Size = new System.Drawing.Size(404, 199);
             this.appoinmentsDataGridView.TabIndex = 0;
+            this.appoinmentsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appoinmentsDataGridView_CellContentClick);
             // 
             // appoinmentPanelButton
             // 
@@ -111,11 +115,20 @@ namespace E_HealthCare.PresentationLayer
             this.profilePanelButton.Text = "Profile";
             this.profilePanelButton.UseVisualStyleBackColor = true;
             // 
+            // selector
+            // 
+            this.selector.AutoSize = true;
+            this.selector.Location = new System.Drawing.Point(132, 142);
+            this.selector.Name = "selector";
+            this.selector.Size = new System.Drawing.Size(0, 13);
+            this.selector.TabIndex = 6;
+            // 
             // DoctorPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 304);
+            this.Controls.Add(this.selector);
             this.Controls.Add(this.profilePanelButton);
             this.Controls.Add(this.appoinmentPanelButton);
             this.Controls.Add(this.appoinmentsGroupBox);
@@ -127,6 +140,7 @@ namespace E_HealthCare.PresentationLayer
             this.appoinmentsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.appoinmentsDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,5 +153,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button appoinmentPanelButton;
         private System.Windows.Forms.Button profilePanelButton;
         private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.Label selector;
     }
 }

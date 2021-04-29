@@ -12,7 +12,7 @@ namespace E_HealthCare.DataAccessLayer
     {
         public User GetUser(string userName, string password)
         {
-            string sql = "SELECT * fROM Users WHERE UserName='" + userName + "' AND Password='" + password + "'";
+            string sql = "SELECT * FROM Users WHERE UserName='" + userName + "' AND Password='" + password + "'";
             SqlDataReader reader = this.GetData(sql);
             if (reader.Read())
             {
@@ -22,6 +22,29 @@ namespace E_HealthCare.DataAccessLayer
                 return user;
             }
             return null;
+        }
+
+        //Created by (zihan) for PatientPanel 
+        public User GetPatient(int userId, int appointmentId)
+        {
+            //getting data from two tables because "Problem" column is not present in "Users" table
+            string sql = "SELECT * FROM Users WHERE UserId = " + userId; 
+            string sql2 = "SELECT * FROM Appointments WHERE AppointmentId = " + appointmentId;
+            User user = new User();
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                user.Name = reader["Name"].ToString();
+                user.Age = Convert.ToInt32(reader["Age"]);
+                user.BloodGroup = reader["BloodGroup"].ToString();
+            }
+            reader.Close();
+            SqlDataReader reader2 = this.GetData(sql2);
+            if (reader2.Read())
+            {
+                user.Problem = reader2["Problem"].ToString();
+            }
+            return user;
         }
 
         public int AddUser(User user)

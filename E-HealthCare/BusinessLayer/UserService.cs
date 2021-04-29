@@ -23,5 +23,11 @@ namespace E_HealthCare.BusinessLayer
                 return null;
             }
         }
+
+        public User GetPatient(int userId, int appointmentId)
+        {
+            UserDataAccess userDataAccess = new UserDataAccess();
+            return userDataAccess.GetPatient(userId, appointmentId);
+        }
     }
 }

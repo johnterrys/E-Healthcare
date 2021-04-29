@@ -12,6 +12,7 @@ namespace E_HealthCare.DataAccessLayer.Entity
         public string Name { get; set; }
         public string UserName { get; set; }
         public string DoB { get; set; }
+        public int Age { get; set; } //added by (zihan) for PatientPanel
         public string BloodGroup { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
@@ -24,5 +25,6 @@ namespace E_HealthCare.DataAccessLayer.Entity
         public string ShiftOne { get; set; }
         public string ShiftTwo { get; set; }
         public int Role { get; set; }
+        public string Problem { get; set; } //added by (zihan) for PatientPanel
     }
 }

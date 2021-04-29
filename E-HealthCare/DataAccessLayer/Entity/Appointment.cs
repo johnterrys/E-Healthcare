@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_HealthCare.DataAccessLayer.Entity
 {
-    class Appointment
+    public class Appointment
     {
         public int AppointmentId { get; set; }
         public string PatientName { get; set; }

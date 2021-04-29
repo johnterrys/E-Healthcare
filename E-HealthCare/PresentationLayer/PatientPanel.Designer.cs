@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.namelabel = new System.Windows.Forms.Label();
             this.ageLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bloodGroupLabel = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name:";
             // 
-            // label3
+            // namelabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(243, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.namelabel.AutoSize = true;
+            this.namelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namelabel.Location = new System.Drawing.Point(243, 80);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(51, 20);
+            this.namelabel.TabIndex = 2;
+            this.namelabel.Text = "label3";
             // 
             // ageLabel
             // 
@@ -164,7 +164,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.namelabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PatientPanel";
@@ -180,7 +180,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.Label ageLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label bloodGroupLabel;
