@@ -42,6 +42,24 @@ namespace E_HealthCare.DataAccessLayer
             }
             return users;
         }
+        public List<User> GetAdminDoctor()
+        {
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3;
+            SqlDataReader reader1 = this.GetData(sql);
+            List<User> users = new List<User>();
+            while (reader1.Read())
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(reader1["UserId"]);
+                user.Name = reader1["Name"].ToString();
+                user.Department = reader1["Department"].ToString();
+                user.Qualification = reader1["Qualification"].ToString();
+                user.ShiftOne = reader1["ShiftOne"].ToString();
+                user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                users.Add(user);
+            }
+            return users;
+        }
 
         //Created by (zihan) for PatientPanel 
         public User GetPatient(int userId, int appointmentId)
@@ -74,7 +92,7 @@ namespace E_HealthCare.DataAccessLayer
 
         public int AddDoctor(User user)
         {
-            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Gender,Phone,Address,Department,Qualification,Institute,Designation,Fees,Password,ShiftOne,ShiftTwo,Role,Age,Gender) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Phone + "','" + user.Address + "','" + user.Department + "','" + user.Qualification + "','" + user.Institute + "','" + user.Designation + "',"+ user.Fees+",'" + user.Password + "','" +user.ShiftOne + "', '" + user.ShiftTwo + "',"+ user.Role + "," + user.Age + ",'" + user.Gender + "'" + ")";
+            string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Gender,Phone,Address,Department,Qualification,Institute,Designation,Fees,Password,ShiftOne,ShiftTwo,Role,Age) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Gender + "','" + user.Phone + "','" + user.Address + "','" + user.Department + "','" + user.Qualification + "','" + user.Institute + "','" + user.Designation + "',"+ user.Fees+",'" + user.Password + "','" +user.ShiftOne + "', '" + user.ShiftTwo + "',"+ user.Role + "," + user.Age+ ")";
             return this.ExecuteQuery(sql);
         }
     }

@@ -155,6 +155,7 @@ namespace E_HealthCare.PresentationLayer
             this.addDoctorButton.TabIndex = 15;
             this.addDoctorButton.Text = "Add Doctor";
             this.addDoctorButton.UseVisualStyleBackColor = true;
+            this.addDoctorButton.Click += new System.EventHandler(this.addDoctorButton_Click);
             // 
             // removeDoctorButton
             // 
