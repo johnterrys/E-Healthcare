@@ -37,7 +37,7 @@ namespace E_HealthCare.PresentationLayer
 
         private void PatientPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void createPrescriptionButton_Click(object sender, EventArgs e)

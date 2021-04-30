@@ -87,10 +87,13 @@ namespace E_HealthCare.PresentationLayer
             // 
             // appoinmentsDataGridView
             // 
+            this.appoinmentsDataGridView.AllowUserToAddRows = false;
+            this.appoinmentsDataGridView.AllowUserToDeleteRows = false;
             this.appoinmentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appoinmentsDataGridView.Location = new System.Drawing.Point(4, 20);
             this.appoinmentsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.appoinmentsDataGridView.Name = "appoinmentsDataGridView";
+            this.appoinmentsDataGridView.ReadOnly = true;
             this.appoinmentsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.appoinmentsDataGridView.Size = new System.Drawing.Size(404, 199);
             this.appoinmentsDataGridView.TabIndex = 0;

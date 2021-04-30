@@ -113,6 +113,12 @@
     <Compile Include="PresentationLayer\PatientPanel.Designer.cs">
       <DependentUpon>PatientPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\ViewPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ViewPrescription.Designer.cs">
+      <DependentUpon>ViewPrescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\UserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PatientPanel.resx">
       <DependentUpon>PatientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ViewPrescription.resx">
+      <DependentUpon>ViewPrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\UserDashboard.resx">
       <DependentUpon>UserDashboard.cs</DependentUpon>

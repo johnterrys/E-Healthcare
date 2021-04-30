@@ -10,19 +10,44 @@ namespace E_HealthCare.DataAccessLayer
 {
     class PrescriptionDataAccess: DataAccess
     {
-        public Prescription GetUserPrescription(string userId)
+        public List<Prescription> GetUserPrescriptions(int userId)
         {
-            string sql = "SELECT Date,DoctorName,Department,Problem,Advice FROM Prescriptions WHERE UserId='" + userId;
+            string sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId FROM Prescriptions WHERE PatientId=" + userId;
             SqlDataReader reader = this.GetData(sql);
+            List<Prescription> prescriptions = new List<Prescription>();
             if (reader.Read())
             {
                 Prescription prescription = new Prescription();
                 prescription.Date = reader["Date"].ToString();
                 prescription.DoctorName = reader["DoctorName"].ToString();
-                prescription.Department = reader["Department"].ToString();
-                return prescription;
+                prescription.Problem = reader["Problem"].ToString();
+                prescription.PatientId = userId;
+                prescription.PrescriptionId = Convert.ToInt32(reader["PrescriptionId"]);
+                //prescription.Department = reader["Department"].ToString();
+                prescriptions.Add(prescription);
             }
-            return null;
+            return prescriptions;
+        }
+
+        public Prescription GetUserPrescription(int prescriptionId)
+        {
+            string sql = "SELECT Date,DoctorName,Department,Problem,PatientId FROM Prescriptions WHERE PrescriptionId=" + prescriptionId;
+            SqlDataReader reader = this.GetData(sql);
+            Prescription prescription = new Prescription();
+            if (reader.Read())
+            {
+                prescription.Date = reader["Date"].ToString();
+                prescription.DoctorName = reader["DoctorName"].ToString();
+                prescription.Problem = reader["Problem"].ToString();
+            }
+            string sql2 = "SELECT Name FROM Users WHERE UserId =" + Convert.ToInt32(reader["PatientId"]);
+            reader.Close();
+            SqlDataReader reader2 = this.GetData(sql2);
+            if (reader2.Read())
+            {
+                prescription.PatientName = reader2["Name"].ToString();
+            }
+            return prescription;
         }
 
         public int AddPrescription(Prescription prescription)

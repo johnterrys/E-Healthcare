@@ -22,5 +22,17 @@ namespace E_HealthCare.BusinessLayer
             PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
             return prescriptionDataAccess.GetProblem(appointmentId);
         }
+
+        public List<Prescription> GetUserPrescriptions(int userId)
+        {
+            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
+            return prescriptionDataAccess.GetUserPrescriptions(userId);
+        }
+
+        public Prescription GetUserPrescription(int prescriptionId)
+        {
+            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
+            return prescriptionDataAccess.GetUserPrescription(prescriptionId);
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace E_HealthCare.PresentationLayer
         int userId;
         string userName;
         int appointmentId;
+        int prescriptionId;
         public UserPanel( int userId, string name)
         {
             InitializeComponent();
@@ -55,6 +56,9 @@ namespace E_HealthCare.PresentationLayer
         {
             AppointmentService appointmentService = new AppointmentService();
             appointmentsDataGridView.DataSource = appointmentService.GetUserAppointments(this.userId);
+
+            PrescriptionService prescriptionService = new PrescriptionService();
+            prescriptionDataGridView.DataSource = prescriptionService.GetUserPrescriptions(this.userId);
         }
 
         private void appointmentsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -96,6 +100,17 @@ namespace E_HealthCare.PresentationLayer
             BloodRequestPanel bloodRequestPanel = new BloodRequestPanel(this.userId, this.userName);
             this.Hide();
             bloodRequestPanel.Show();
+        }
+
+        private void prescriptionDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.prescriptionId = (int)prescriptionDataGridView.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            ViewPrescription viewPrescription = new ViewPrescription(this.prescriptionId);
+            viewPrescription.Show();
         }
     }
 }
