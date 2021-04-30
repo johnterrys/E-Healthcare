@@ -60,6 +60,60 @@ namespace E_HealthCare.DataAccessLayer
             }
             return users;
         }
+        public List<User> GetDoctorByName(string name)
+        {
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3 +" AND Name LIKE "+"'"+"%"+name+"%"+"'";
+            SqlDataReader reader1 = this.GetData(sql);
+            List<User> users = new List<User>();
+            while (reader1.Read())
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(reader1["UserId"]);
+                user.Name = reader1["Name"].ToString();
+                user.Department = reader1["Department"].ToString();
+                user.Qualification = reader1["Qualification"].ToString();
+                user.ShiftOne = reader1["ShiftOne"].ToString();
+                user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                users.Add(user);
+            }
+            return users;
+        }
+
+        public List<User> GetUserByPhone(string phone)
+        {
+            string sql = "SELECT UserId,Name,Age,Phone,Address FROM Users WHERE Role=" + 2 + " AND Phone LIKE " + "'" + "%" + phone + "%" + "'";
+            SqlDataReader reader = this.GetData(sql);
+            List<User> users = new List<User>();
+            while (reader.Read())
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(reader["UserId"]);
+                user.Name = reader["Name"].ToString();
+                user.Age = Convert.ToInt32(reader["Age"]);
+                user.Phone = reader["Phone"].ToString();
+                user.Address = reader["Address"].ToString();
+                users.Add(user);
+            }
+            return users;
+        }
+        public List<User> GetDoctorByDepartment(string department)
+        {
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3 + " AND Department=" + "'" + department+ "'";
+            SqlDataReader reader1 = this.GetData(sql);
+            List<User> users = new List<User>();
+            while (reader1.Read())
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(reader1["UserId"]);
+                user.Name = reader1["Name"].ToString();
+                user.Department = reader1["Department"].ToString();
+                user.Qualification = reader1["Qualification"].ToString();
+                user.ShiftOne = reader1["ShiftOne"].ToString();
+                user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                users.Add(user);
+            }
+            return users;
+        }
 
         //Created by (zihan) for PatientPanel 
         public User GetPatient(int userId, int appointmentId)
@@ -93,6 +147,11 @@ namespace E_HealthCare.DataAccessLayer
         public int AddDoctor(User user)
         {
             string sql = "INSERT INTO Users(Name,Username,DoB,BloodGroup,Gender,Phone,Address,Department,Qualification,Institute,Designation,Fees,Password,ShiftOne,ShiftTwo,Role,Age) VALUES ('" + user.Name + "', '" + user.UserName + "','" + user.DoB + "','" + user.BloodGroup + "','" + user.Gender + "','" + user.Phone + "','" + user.Address + "','" + user.Department + "','" + user.Qualification + "','" + user.Institute + "','" + user.Designation + "',"+ user.Fees+",'" + user.Password + "','" +user.ShiftOne + "', '" + user.ShiftTwo + "',"+ user.Role + "," + user.Age+ ")";
+            return this.ExecuteQuery(sql);
+        }
+        public int DeleteUser(int id)
+        {
+            string sql = "DELETE FROM Users WHERE UserID=" + id;
             return this.ExecuteQuery(sql);
         }
     }

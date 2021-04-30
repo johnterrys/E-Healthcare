@@ -54,6 +54,12 @@ namespace E_HealthCare.PresentationLayer
             this.findDoctorLabel = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
+            this.doctorSearchButton = new System.Windows.Forms.Button();
+            this.providerSearchButton = new System.Windows.Forms.Button();
+            this.doctorNameTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userSearchTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.userSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.doctorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataGridView)).BeginInit();
@@ -80,6 +86,7 @@ namespace E_HealthCare.PresentationLayer
             this.doctorDataGridView.RowTemplate.Height = 24;
             this.doctorDataGridView.Size = new System.Drawing.Size(395, 150);
             this.doctorDataGridView.TabIndex = 8;
+            this.doctorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.doctorDataGridView_CellClick);
             // 
             // appointmentsDataGridView
             // 
@@ -167,6 +174,7 @@ namespace E_HealthCare.PresentationLayer
             this.removeDoctorButton.TabIndex = 16;
             this.removeDoctorButton.Text = "Remove Doctor";
             this.removeDoctorButton.UseVisualStyleBackColor = true;
+            this.removeDoctorButton.Click += new System.EventHandler(this.removeDoctorButton_Click);
             // 
             // createAppointmentButton
             // 
@@ -211,6 +219,7 @@ namespace E_HealthCare.PresentationLayer
             this.usersGridView.RowTemplate.Height = 24;
             this.usersGridView.Size = new System.Drawing.Size(385, 150);
             this.usersGridView.TabIndex = 20;
+            this.usersGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGridView_CellClick);
             // 
             // userLabel
             // 
@@ -323,12 +332,78 @@ namespace E_HealthCare.PresentationLayer
             this.removeButton.TabIndex = 31;
             this.removeButton.Text = "Remove User";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // doctorSearchButton
+            // 
+            this.doctorSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doctorSearchButton.Location = new System.Drawing.Point(447, 289);
+            this.doctorSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.doctorSearchButton.Name = "doctorSearchButton";
+            this.doctorSearchButton.Size = new System.Drawing.Size(101, 38);
+            this.doctorSearchButton.TabIndex = 32;
+            this.doctorSearchButton.Text = "Search";
+            this.doctorSearchButton.UseVisualStyleBackColor = true;
+            this.doctorSearchButton.Click += new System.EventHandler(this.doctorSearchButton_Click);
+            // 
+            // providerSearchButton
+            // 
+            this.providerSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.providerSearchButton.Location = new System.Drawing.Point(1065, 264);
+            this.providerSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.providerSearchButton.Name = "providerSearchButton";
+            this.providerSearchButton.Size = new System.Drawing.Size(101, 38);
+            this.providerSearchButton.TabIndex = 33;
+            this.providerSearchButton.Text = "Search";
+            this.providerSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // doctorNameTextBox
+            // 
+            this.doctorNameTextBox.Location = new System.Drawing.Point(235, 305);
+            this.doctorNameTextBox.Name = "doctorNameTextBox";
+            this.doctorNameTextBox.Size = new System.Drawing.Size(189, 22);
+            this.doctorNameTextBox.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(729, 548);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 18);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Enter User Phone:";
+            // 
+            // userSearchTextBox
+            // 
+            this.userSearchTextBox.Location = new System.Drawing.Point(889, 547);
+            this.userSearchTextBox.Name = "userSearchTextBox";
+            this.userSearchTextBox.Size = new System.Drawing.Size(189, 22);
+            this.userSearchTextBox.TabIndex = 36;
+            // 
+            // userSearchButton
+            // 
+            this.userSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSearchButton.Location = new System.Drawing.Point(913, 576);
+            this.userSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userSearchButton.Name = "userSearchButton";
+            this.userSearchButton.Size = new System.Drawing.Size(101, 38);
+            this.userSearchButton.TabIndex = 37;
+            this.userSearchButton.Text = "Search";
+            this.userSearchButton.UseVisualStyleBackColor = true;
+            this.userSearchButton.Click += new System.EventHandler(this.userSearchButton_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1352, 640);
+            this.Controls.Add(this.userSearchButton);
+            this.Controls.Add(this.userSearchTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.doctorNameTextBox);
+            this.Controls.Add(this.providerSearchButton);
+            this.Controls.Add(this.doctorSearchButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.findDoctorLabel);
@@ -396,5 +471,11 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label findDoctorLabel;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button doctorSearchButton;
+        private System.Windows.Forms.Button providerSearchButton;
+        private System.Windows.Forms.MaskedTextBox doctorNameTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox userSearchTextBox;
+        private System.Windows.Forms.Button userSearchButton;
     }
 }

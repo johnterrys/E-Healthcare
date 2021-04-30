@@ -25,6 +25,18 @@ namespace E_HealthCare.BusinessLayer
         {
             return this.userDataAccess.GetAdminDoctor();
         }
+        public List<User> GetDoctorByName(string name)
+        {
+            return this.userDataAccess.GetDoctorByName(name);
+        }
+        public List<User> GetUserByPhone(string phone)
+        {
+            return this.userDataAccess.GetUserByPhone(phone);
+        }
+        public List<User> GetDoctorDepartment(string department)
+        {
+            return this.userDataAccess.GetDoctorByDepartment(department);
+        }
         public User GetUser(string userName, string password)
         {
             return this.userDataAccess.GetUser(userName, password);
@@ -46,8 +58,14 @@ namespace E_HealthCare.BusinessLayer
         {
 
             User user = new User() { Name = name, UserName = userName, Password = password, DoB = dob, Qualification = degree, Institute = institute , Fees = fee,
-                BloodGroup = bg, Gender = gender, Age = age, Role = role, Phone = phone, Address = address, Designation = designation, Department = department};
+                BloodGroup = bg, Gender = gender, Age = age, Role = role, Phone = phone, Address = address,ShiftOne = shiftOne, ShiftTwo = shiftTwo,
+                Designation = designation, Department = department};
             return this.userDataAccess.AddDoctor(user);
+        }
+        public int DeleteUser(int userId)
+        {
+
+            return this.userDataAccess.DeleteUser(userId);
         }
     }
 }
