@@ -40,7 +40,6 @@ namespace E_HealthCare.PresentationLayer
             this.addDoctorButton = new System.Windows.Forms.Button();
             this.removeDoctorButton = new System.Windows.Forms.Button();
             this.createAppointmentButton = new System.Windows.Forms.Button();
-            this.cancelAppointmentButton = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.usersGridView = new System.Windows.Forms.DataGridView();
             this.userLabel = new System.Windows.Forms.Label();
@@ -60,6 +59,9 @@ namespace E_HealthCare.PresentationLayer
             this.label1 = new System.Windows.Forms.Label();
             this.userSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.userSearchButton = new System.Windows.Forms.Button();
+            this.cancelAppointmentButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.shiftComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.doctorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataGridView)).BeginInit();
@@ -98,6 +100,7 @@ namespace E_HealthCare.PresentationLayer
             this.appointmentsDataGridView.RowTemplate.Height = 24;
             this.appointmentsDataGridView.Size = new System.Drawing.Size(395, 150);
             this.appointmentsDataGridView.TabIndex = 9;
+            this.appointmentsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appointmentsDataGridView_CellClick);
             // 
             // doctorsListLabel
             // 
@@ -187,18 +190,6 @@ namespace E_HealthCare.PresentationLayer
             this.createAppointmentButton.Text = "Make Appointment";
             this.createAppointmentButton.UseVisualStyleBackColor = true;
             this.createAppointmentButton.Click += new System.EventHandler(this.createAppointmentButton_Click);
-            // 
-            // cancelAppointmentButton
-            // 
-            this.cancelAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelAppointmentButton.Location = new System.Drawing.Point(477, 474);
-            this.cancelAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cancelAppointmentButton.Name = "cancelAppointmentButton";
-            this.cancelAppointmentButton.Size = new System.Drawing.Size(135, 67);
-            this.cancelAppointmentButton.TabIndex = 18;
-            this.cancelAppointmentButton.Text = "Cancel Appointment";
-            this.cancelAppointmentButton.UseVisualStyleBackColor = true;
-            this.cancelAppointmentButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // welcomeLabel
             // 
@@ -315,13 +306,14 @@ namespace E_HealthCare.PresentationLayer
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(188, 548);
+            this.updateButton.Location = new System.Drawing.Point(358, 548);
             this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(147, 66);
+            this.updateButton.Size = new System.Drawing.Size(93, 66);
             this.updateButton.TabIndex = 30;
-            this.updateButton.Text = "Update Appointment";
+            this.updateButton.Text = "Update Shift";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // removeButton
             // 
@@ -377,7 +369,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             // userSearchTextBox
             // 
-            this.userSearchTextBox.Location = new System.Drawing.Point(889, 547);
+            this.userSearchTextBox.Location = new System.Drawing.Point(900, 547);
             this.userSearchTextBox.Name = "userSearchTextBox";
             this.userSearchTextBox.Size = new System.Drawing.Size(189, 22);
             this.userSearchTextBox.TabIndex = 36;
@@ -385,7 +377,7 @@ namespace E_HealthCare.PresentationLayer
             // userSearchButton
             // 
             this.userSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSearchButton.Location = new System.Drawing.Point(913, 576);
+            this.userSearchButton.Location = new System.Drawing.Point(923, 576);
             this.userSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userSearchButton.Name = "userSearchButton";
             this.userSearchButton.Size = new System.Drawing.Size(101, 38);
@@ -394,11 +386,44 @@ namespace E_HealthCare.PresentationLayer
             this.userSearchButton.UseVisualStyleBackColor = true;
             this.userSearchButton.Click += new System.EventHandler(this.userSearchButton_Click);
             // 
+            // cancelAppointmentButton
+            // 
+            this.cancelAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelAppointmentButton.Location = new System.Drawing.Point(477, 481);
+            this.cancelAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelAppointmentButton.Name = "cancelAppointmentButton";
+            this.cancelAppointmentButton.Size = new System.Drawing.Size(135, 60);
+            this.cancelAppointmentButton.TabIndex = 38;
+            this.cancelAppointmentButton.Text = "Cancel Appointment";
+            this.cancelAppointmentButton.UseVisualStyleBackColor = true;
+            this.cancelAppointmentButton.Click += new System.EventHandler(this.cancelAppointmentButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(53, 562);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 18);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Update Shift:";
+            // 
+            // shiftComboBox
+            // 
+            this.shiftComboBox.FormattingEnabled = true;
+            this.shiftComboBox.Location = new System.Drawing.Point(194, 561);
+            this.shiftComboBox.Name = "shiftComboBox";
+            this.shiftComboBox.Size = new System.Drawing.Size(121, 24);
+            this.shiftComboBox.TabIndex = 40;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1352, 640);
+            this.Controls.Add(this.shiftComboBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cancelAppointmentButton);
             this.Controls.Add(this.userSearchButton);
             this.Controls.Add(this.userSearchTextBox);
             this.Controls.Add(this.label1);
@@ -418,7 +443,6 @@ namespace E_HealthCare.PresentationLayer
             this.Controls.Add(this.userLabel);
             this.Controls.Add(this.usersGridView);
             this.Controls.Add(this.welcomeLabel);
-            this.Controls.Add(this.cancelAppointmentButton);
             this.Controls.Add(this.createAppointmentButton);
             this.Controls.Add(this.removeDoctorButton);
             this.Controls.Add(this.addDoctorButton);
@@ -458,7 +482,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button addDoctorButton;
         private System.Windows.Forms.Button removeDoctorButton;
         private System.Windows.Forms.Button createAppointmentButton;
-        private System.Windows.Forms.Button cancelAppointmentButton;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.DataGridView usersGridView;
         private System.Windows.Forms.Label userLabel;
@@ -478,5 +501,8 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox userSearchTextBox;
         private System.Windows.Forms.Button userSearchButton;
+        private System.Windows.Forms.Button cancelAppointmentButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox shiftComboBox;
     }
 }

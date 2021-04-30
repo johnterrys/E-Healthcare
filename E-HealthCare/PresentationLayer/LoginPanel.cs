@@ -36,7 +36,7 @@ namespace E_HealthCare.PresentationLayer
             }
             else
             {
-                //For Testing Purpose (Zihan)
+                
                 UserService userService = new UserService();
                 User user = userService.GetUser(userNameTextBox.Text, passwordTextBox.Text);
                 if (user != null && user.Role == 3)
@@ -60,18 +60,6 @@ namespace E_HealthCare.PresentationLayer
                 else {
                     MessageBox.Show("You Don't Have Any Account!");
                 }
-                //For Testing Purpose (Zihan)
-
-
-                /* UserService userService = new UserService();
-                 User user = userService.GetUser(nameTextBox.Text, passwordTextBox.Text);
-                 if (user != null)
-                 {
-                     HomePanel homePanel = new HomePanel(user.UserId, user.Username);
-                     this.Hide();
-                     homePanel.Show();
-                 }
-                 else { MessageBox.Show("You Don't Have Any Account!"); }*/
             }
         }
 

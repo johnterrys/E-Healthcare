@@ -154,6 +154,7 @@ namespace E_HealthCare.PresentationLayer
             this.bloodRequestButton.TabIndex = 29;
             this.bloodRequestButton.Text = "Blood Request";
             this.bloodRequestButton.UseVisualStyleBackColor = true;
+            this.bloodRequestButton.Click += new System.EventHandler(this.bloodRequestButton_Click);
             // 
             // findButton
             // 

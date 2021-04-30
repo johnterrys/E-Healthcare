@@ -15,6 +15,10 @@ namespace E_HealthCare.BusinessLayer
         public AppointmentService() {
             this.appointmentDataAccess = new AppointmentDataAccess();
         }
+        public List<Appointment> GetAdminAppointments()
+        {
+            return appointmentDataAccess.GetAdminAppointment();
+        }
         public List<Appointment> GetDoctorAppointments(int doctorId)
         {
             return appointmentDataAccess.GetDoctorAppointments(doctorId);
@@ -36,6 +40,12 @@ namespace E_HealthCare.BusinessLayer
         {
 
             return this.appointmentDataAccess.DeleteAppointment(id);
+        }
+
+        public int UpdateShift(int id, string shift)
+        {
+
+            return this.appointmentDataAccess.UpdateAppointmentShift(id, shift);
         }
     }
 }

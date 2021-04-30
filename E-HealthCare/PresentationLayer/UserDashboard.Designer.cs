@@ -125,6 +125,7 @@ namespace E_HealthCare.PresentationLayer
             this.updateButton.TabIndex = 37;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // backButton
             // 
@@ -135,16 +136,18 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.TabIndex = 38;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(427, 23);
+            this.deleteButton.Location = new System.Drawing.Point(412, 21);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(90, 70);
+            this.deleteButton.Size = new System.Drawing.Size(120, 80);
             this.deleteButton.TabIndex = 39;
             this.deleteButton.Text = "Delete Account";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // UserDashboard
             // 

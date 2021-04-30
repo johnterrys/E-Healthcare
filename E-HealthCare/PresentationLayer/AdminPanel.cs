@@ -16,13 +16,16 @@ namespace E_HealthCare.PresentationLayer
         int adminId;
         string name;
         int userId;
+        int appointmentId;
         List<string> department = new List<string> { "","Medicine", "Neurology", "ENT", "Dermatology", "Cardiology" };
+        List<string> shift = new List<string> { "ShiftOne", "ShiftTwo" };
         public AdminPanel(int userId, string name)
         {
             InitializeComponent();
             this.adminId = userId;
             this.name = name;
             doctorDepartmentComboBox.DataSource = department;
+            shiftComboBox.DataSource = shift;
         }
 
         private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -48,6 +51,8 @@ namespace E_HealthCare.PresentationLayer
             usersGridView.DataSource = userService.GetAdminUser();
             UserService userService1 = new UserService();
             doctorDataGridView.DataSource = userService1.GetAdminDoctor();
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentsDataGridView.DataSource = appointmentService.GetAdminAppointments();
             welcomeLabel.Text = this.name;
         }
 
@@ -70,6 +75,8 @@ namespace E_HealthCare.PresentationLayer
             usersGridView.DataSource = userService.GetAdminUser();
             UserService userService1 = new UserService();
             doctorDataGridView.DataSource = userService1.GetAdminDoctor();
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentsDataGridView.DataSource = appointmentService.GetAdminAppointments();
             welcomeLabel.Text = this.name;
         }
         private void removeButton_Click(object sender, EventArgs e)
@@ -150,6 +157,55 @@ namespace E_HealthCare.PresentationLayer
             MakeAppoinmentPanel makeAppoinmentPanel = new MakeAppoinmentPanel(this.adminId, this.name, 1);
             this.Hide();
             makeAppoinmentPanel.Show();
+        }
+
+        private void cancelAppointmentButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("The Selected Appointment Will be Deleted!", "Delete Appointment", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                AppointmentService appointmentService = new AppointmentService();
+                int result = appointmentService.DeleteAppointment(this.appointmentId);
+                if (result > 0)
+                {
+                    MessageBox.Show("Appontment Deleted!");
+                    UpdateLists();
+                }
+                else { MessageBox.Show("Error!"); }
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void appointmentsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.appointmentId = (int)appointmentsDataGridView.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("The Selected Appointment Will be Updated!", "Update Shift", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                AppointmentService appointmentService = new AppointmentService();
+                int result = appointmentService.UpdateShift(this.appointmentId, shiftComboBox.Text);
+                if (result > 0)
+                {
+                    MessageBox.Show("Appontment Updated!");
+                    UpdateLists();
+                }
+                else { MessageBox.Show("Error!"); }
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

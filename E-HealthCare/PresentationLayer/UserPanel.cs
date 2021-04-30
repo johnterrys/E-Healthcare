@@ -21,6 +21,7 @@ namespace E_HealthCare.PresentationLayer
             InitializeComponent();
             this.userId = userId;
             this.userName = name;
+            welcomeLabel.Text = userName;
         }
 
         private void UserPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,6 +89,13 @@ namespace E_HealthCare.PresentationLayer
             UserDashboard userDashboard = new UserDashboard(this.userId, this.userName, 2);
             this.Hide();
             userDashboard.Show();
+        }
+
+        private void bloodRequestButton_Click(object sender, EventArgs e)
+        {
+            BloodRequestPanel bloodRequestPanel = new BloodRequestPanel(this.userId, this.userName);
+            this.Hide();
+            bloodRequestPanel.Show();
         }
     }
 }

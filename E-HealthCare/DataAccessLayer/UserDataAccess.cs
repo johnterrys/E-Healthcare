@@ -25,6 +25,46 @@ namespace E_HealthCare.DataAccessLayer
             return null;
         }
 
+        public User GetUserPassword(int userId)
+        {
+            string sql = "SELECT Password FROM Users WHERE UserId=" + userId;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                User user = new User();
+                user.Password = reader["Password"].ToString();
+                return user;
+            }
+            return null;
+        }
+
+        public User GetUserBG(int userId)
+        {
+            string sql = "SELECT BloodGroup FROM Users WHERE UserId=" + userId;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                User user = new User();
+                user.BloodGroup = reader["BloodGroup"].ToString();
+                return user;
+            }
+            return null;
+        }
+
+        public User GetUserPhone(int userId)
+        {
+            string sql = "SELECT Phone FROM Users WHERE UserId=" + userId;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                User user = new User();
+                user.Phone = reader["Phone"].ToString();
+                return user;
+            }
+            return null;
+        }
+
+
         public List<User> GetAdminUser()
         {
             string sql = "SELECT UserId,Name,Age,Phone,Address FROM Users WHERE Role="+2;
@@ -155,6 +195,10 @@ namespace E_HealthCare.DataAccessLayer
         public int DeleteUser(int id)
         {
             string sql = "DELETE FROM Users WHERE UserID=" + id;
+            return this.ExecuteQuery(sql);
+        }
+        public int UpdateUser(int id, string password) { 
+            string sql = "UPDATE Users SET Password = '"+password+"' WHERE UserID = " + id;
             return this.ExecuteQuery(sql);
         }
     }

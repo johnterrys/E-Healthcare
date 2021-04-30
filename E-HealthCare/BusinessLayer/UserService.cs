@@ -41,6 +41,20 @@ namespace E_HealthCare.BusinessLayer
         {
             return this.userDataAccess.GetUser(userName, password);
         }
+
+        public User GetUserPass(int userId)
+        {
+            return this.userDataAccess.GetUserPassword(userId);
+        }
+
+        public User GetUserBG(int userId)
+        {
+            return this.userDataAccess.GetUserBG(userId);
+        }
+        public User GetUserPhone(int userId)
+        {
+            return this.userDataAccess.GetUserPhone(userId);
+        }
         public User GetPatient(int userId, int appointmentId)
         {
             return userDataAccess.GetPatient(userId, appointmentId);
@@ -66,6 +80,12 @@ namespace E_HealthCare.BusinessLayer
         {
 
             return this.userDataAccess.DeleteUser(userId);
+        }
+
+        public int UpdateUserPass(int userId, string password)
+        {
+
+            return this.userDataAccess.UpdateUser(userId,password);
         }
     }
 }

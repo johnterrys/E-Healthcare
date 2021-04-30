@@ -90,7 +90,7 @@ namespace E_HealthCare.PresentationLayer
             // 
             this.searchDoctorLabel.AutoSize = true;
             this.searchDoctorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchDoctorLabel.Location = new System.Drawing.Point(229, 88);
+            this.searchDoctorLabel.Location = new System.Drawing.Point(203, 88);
             this.searchDoctorLabel.Name = "searchDoctorLabel";
             this.searchDoctorLabel.Size = new System.Drawing.Size(159, 18);
             this.searchDoctorLabel.TabIndex = 30;
@@ -99,7 +99,7 @@ namespace E_HealthCare.PresentationLayer
             // doctorSearchTextBox
             // 
             this.doctorSearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doctorSearchTextBox.Location = new System.Drawing.Point(394, 82);
+            this.doctorSearchTextBox.Location = new System.Drawing.Point(383, 82);
             this.doctorSearchTextBox.Name = "doctorSearchTextBox";
             this.doctorSearchTextBox.Size = new System.Drawing.Size(145, 28);
             this.doctorSearchTextBox.TabIndex = 37;
@@ -107,9 +107,9 @@ namespace E_HealthCare.PresentationLayer
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(748, 74);
+            this.searchButton.Location = new System.Drawing.Point(757, 74);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(88, 36);
+            this.searchButton.Size = new System.Drawing.Size(104, 36);
             this.searchButton.TabIndex = 38;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -172,9 +172,9 @@ namespace E_HealthCare.PresentationLayer
             // makeAppointmentButton
             // 
             this.makeAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makeAppointmentButton.Location = new System.Drawing.Point(431, 557);
+            this.makeAppointmentButton.Location = new System.Drawing.Point(439, 557);
             this.makeAppointmentButton.Name = "makeAppointmentButton";
-            this.makeAppointmentButton.Size = new System.Drawing.Size(125, 59);
+            this.makeAppointmentButton.Size = new System.Drawing.Size(146, 59);
             this.makeAppointmentButton.TabIndex = 45;
             this.makeAppointmentButton.Text = "Make Appointment";
             this.makeAppointmentButton.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@ namespace E_HealthCare.PresentationLayer
             // patientIdTextBox
             // 
             this.patientIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientIdTextBox.Location = new System.Drawing.Point(638, 384);
+            this.patientIdTextBox.Location = new System.Drawing.Point(654, 384);
             this.patientIdTextBox.Name = "patientIdTextBox";
             this.patientIdTextBox.Size = new System.Drawing.Size(145, 28);
             this.patientIdTextBox.TabIndex = 50;
@@ -240,7 +240,7 @@ namespace E_HealthCare.PresentationLayer
             // patientNameTextBox
             // 
             this.patientNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientNameTextBox.Location = new System.Drawing.Point(638, 426);
+            this.patientNameTextBox.Location = new System.Drawing.Point(654, 426);
             this.patientNameTextBox.Name = "patientNameTextBox";
             this.patientNameTextBox.Size = new System.Drawing.Size(145, 28);
             this.patientNameTextBox.TabIndex = 52;

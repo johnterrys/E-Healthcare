@@ -10,11 +10,12 @@ namespace E_HealthCare.DataAccessLayer
 {
     class AppointmentDataAccess: DataAccess
     {
-        public Appointment GetAdminAppointment()
+        public List<Appointment> GetAdminAppointment()
         {
             string sql = "SELECT * fROM Appointments";
             SqlDataReader reader = this.GetData(sql);
-            if (reader.Read())
+            List<Appointment> appointments = new List<Appointment>();
+            while (reader.Read())
             {
                 Appointment appointment = new Appointment();
                 appointment.AppointmentId = Convert.ToInt32(reader["AppointmentId"]);
@@ -24,9 +25,9 @@ namespace E_HealthCare.DataAccessLayer
                 appointment.Shift = reader["Shift"].ToString();
                 appointment.UserId = Convert.ToInt32(reader["UserId"]);
                 appointment.DoctorId = Convert.ToInt32(reader["DoctorId"]);
-                return appointment;
+                appointments.Add(appointment);
             }
-            return null;
+            return appointments;
         }
 
         //Create By (Zihan) for DoctorPanel
@@ -76,6 +77,12 @@ namespace E_HealthCare.DataAccessLayer
         public int DeleteAppointment(int id)
         {
             string sql = "DELETE FROM Appointments WHERE AppointmentID=" + id;
+            return this.ExecuteQuery(sql);
+        }
+
+        public int UpdateAppointmentShift(int id, string shift)
+        {
+            string sql = "UPDATE Appointments SET Shift = '" + shift + "' WHERE AppointmentID = " + id;
             return this.ExecuteQuery(sql);
         }
 
