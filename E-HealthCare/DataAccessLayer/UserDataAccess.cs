@@ -44,7 +44,7 @@ namespace E_HealthCare.DataAccessLayer
         }
         public List<User> GetAdminDoctor()
         {
-            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3;
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo,Fees FROM Users WHERE Role=" + 3;
             SqlDataReader reader1 = this.GetData(sql);
             List<User> users = new List<User>();
             while (reader1.Read())
@@ -56,13 +56,14 @@ namespace E_HealthCare.DataAccessLayer
                 user.Qualification = reader1["Qualification"].ToString();
                 user.ShiftOne = reader1["ShiftOne"].ToString();
                 user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                user.Fees = Convert.ToSingle(reader1["Fees"]);
                 users.Add(user);
             }
             return users;
         }
         public List<User> GetDoctorByName(string name)
         {
-            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3 +" AND Name LIKE "+"'"+"%"+name+"%"+"'";
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo,Fees FROM Users WHERE Role=" + 3 +" AND Name LIKE "+"'"+"%"+name+"%"+"'";
             SqlDataReader reader1 = this.GetData(sql);
             List<User> users = new List<User>();
             while (reader1.Read())
@@ -74,6 +75,7 @@ namespace E_HealthCare.DataAccessLayer
                 user.Qualification = reader1["Qualification"].ToString();
                 user.ShiftOne = reader1["ShiftOne"].ToString();
                 user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                user.Fees = Convert.ToSingle(reader1["Fees"]);
                 users.Add(user);
             }
             return users;
@@ -98,7 +100,7 @@ namespace E_HealthCare.DataAccessLayer
         }
         public List<User> GetDoctorByDepartment(string department)
         {
-            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo FROM Users WHERE Role=" + 3 + " AND Department=" + "'" + department+ "'";
+            string sql = "SELECT UserId,Name,Department,Qualification,ShiftOne,ShiftTwo,Fees FROM Users WHERE Role=" + 3 + " AND Department=" + "'" + department+ "'";
             SqlDataReader reader1 = this.GetData(sql);
             List<User> users = new List<User>();
             while (reader1.Read())
@@ -110,6 +112,7 @@ namespace E_HealthCare.DataAccessLayer
                 user.Qualification = reader1["Qualification"].ToString();
                 user.ShiftOne = reader1["ShiftOne"].ToString();
                 user.ShiftTwo = reader1["ShiftTwo"].ToString();
+                user.Fees = Convert.ToSingle(reader1["Fees"]);
                 users.Add(user);
             }
             return users;

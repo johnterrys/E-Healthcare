@@ -186,6 +186,7 @@ namespace E_HealthCare.PresentationLayer
             this.createAppointmentButton.TabIndex = 17;
             this.createAppointmentButton.Text = "Make Appointment";
             this.createAppointmentButton.UseVisualStyleBackColor = true;
+            this.createAppointmentButton.Click += new System.EventHandler(this.createAppointmentButton_Click);
             // 
             // cancelAppointmentButton
             // 

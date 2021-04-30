@@ -12,9 +12,15 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class UserDashboard : Form
     {
-        public UserDashboard()
+        int userId;
+        int role;
+        string userName;
+        public UserDashboard(int userId, string userName, int role)
         {
             InitializeComponent();
+            this.userId = userId;
+            this.userName = userName;
+            this.role = role;
         }
 
         private void UserDashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -24,7 +30,7 @@ namespace E_HealthCare.PresentationLayer
 
         private void UserDashboard_Load(object sender, EventArgs e)
         {
-
+            usernameLabel.Text = this.userName;
         }
     }
 }

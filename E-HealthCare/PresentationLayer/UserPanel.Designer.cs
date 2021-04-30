@@ -41,6 +41,7 @@ namespace E_HealthCare.PresentationLayer
             this.bloodRequestButton = new System.Windows.Forms.Button();
             this.findButton = new System.Windows.Forms.Button();
             this.dashboardButton = new System.Windows.Forms.Button();
+            this.cancelAppointmentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prescriptionDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -80,13 +81,14 @@ namespace E_HealthCare.PresentationLayer
             // createAppointmentButton
             // 
             this.createAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAppointmentButton.Location = new System.Drawing.Point(558, 130);
+            this.createAppointmentButton.Location = new System.Drawing.Point(558, 94);
             this.createAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.createAppointmentButton.Name = "createAppointmentButton";
-            this.createAppointmentButton.Size = new System.Drawing.Size(122, 67);
+            this.createAppointmentButton.Size = new System.Drawing.Size(143, 67);
             this.createAppointmentButton.TabIndex = 24;
             this.createAppointmentButton.Text = "Make Appointment";
             this.createAppointmentButton.UseVisualStyleBackColor = true;
+            this.createAppointmentButton.Click += new System.EventHandler(this.createAppointmentButton_Click);
             // 
             // appointmentListLabel
             // 
@@ -108,6 +110,7 @@ namespace E_HealthCare.PresentationLayer
             this.appointmentsDataGridView.RowTemplate.Height = 24;
             this.appointmentsDataGridView.Size = new System.Drawing.Size(395, 150);
             this.appointmentsDataGridView.TabIndex = 22;
+            this.appointmentsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appointmentsDataGridView_CellClick);
             // 
             // orderByButton
             // 
@@ -173,12 +176,26 @@ namespace E_HealthCare.PresentationLayer
             this.dashboardButton.TabIndex = 31;
             this.dashboardButton.Text = "Dashboard";
             this.dashboardButton.UseVisualStyleBackColor = true;
+            this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
+            // 
+            // cancelAppointmentButton
+            // 
+            this.cancelAppointmentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelAppointmentButton.Location = new System.Drawing.Point(558, 177);
+            this.cancelAppointmentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelAppointmentButton.Name = "cancelAppointmentButton";
+            this.cancelAppointmentButton.Size = new System.Drawing.Size(143, 67);
+            this.cancelAppointmentButton.TabIndex = 32;
+            this.cancelAppointmentButton.Text = "Cancel Appointment";
+            this.cancelAppointmentButton.UseVisualStyleBackColor = true;
+            this.cancelAppointmentButton.Click += new System.EventHandler(this.cancelAppointmentButton_Click);
             // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 652);
+            this.Controls.Add(this.cancelAppointmentButton);
             this.Controls.Add(this.dashboardButton);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.bloodRequestButton);
@@ -195,6 +212,7 @@ namespace E_HealthCare.PresentationLayer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserPanel_FormClosing);
+            this.Load += new System.EventHandler(this.UserPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prescriptionDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -216,5 +234,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button bloodRequestButton;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.Button dashboardButton;
+        private System.Windows.Forms.Button cancelAppointmentButton;
     }
 }

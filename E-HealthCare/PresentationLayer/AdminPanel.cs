@@ -144,5 +144,12 @@ namespace E_HealthCare.PresentationLayer
             UserService userService = new UserService();
             usersGridView.DataSource = userService.GetUserByPhone(userSearchTextBox.Text);
         }
+
+        private void createAppointmentButton_Click(object sender, EventArgs e)
+        {
+            MakeAppoinmentPanel makeAppoinmentPanel = new MakeAppoinmentPanel(this.adminId, this.name, 1);
+            this.Hide();
+            makeAppoinmentPanel.Show();
+        }
     }
 }
