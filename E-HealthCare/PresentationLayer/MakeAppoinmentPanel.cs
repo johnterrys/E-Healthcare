@@ -99,6 +99,8 @@ namespace E_HealthCare.PresentationLayer
             }
             else {
                 UserPanel userPanel = new UserPanel(this.userId, this.userName);
+                this.Hide();
+                userPanel.Show();
             }
         }
 
