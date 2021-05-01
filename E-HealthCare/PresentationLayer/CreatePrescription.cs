@@ -43,13 +43,12 @@ namespace E_HealthCare.PresentationLayer
         public void addJSON(List<Medicine> prescription, int prescriptionId)
         {
             string strResultJson = JsonConvert.SerializeObject(prescription);
-            //File.WriteAllText(@"d:\OOP2\E-Healthcare\E-Healthcare\"+prescriptionId+".json", strResultJson);
-            File.WriteAllText(@"D:\Documents\Programming\C#\E-Healthcare\" + prescriptionId + ".json", strResultJson);
+            File.WriteAllText(@"d:\OOP2\E-Healthcare\E-Healthcare\"+prescriptionId+".json", strResultJson);
+            //File.WriteAllText(@"D:\Documents\Programming\C#\E-Healthcare\" + prescriptionId + ".json", strResultJson);
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Prescription prescription = new Prescription();
             prescription.DoctorName = DoctorName;
             prescription.UserId = PatientId;

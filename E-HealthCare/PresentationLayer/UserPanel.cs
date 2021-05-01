@@ -17,12 +17,14 @@ namespace E_HealthCare.PresentationLayer
         string userName;
         int appointmentId;
         int prescriptionId;
+        bool orderByDate;
         public UserPanel( int userId, string name)
         {
             InitializeComponent();
             this.userId = userId;
             this.userName = name;
             welcomeLabel.Text = userName;
+            orderByDate = false;
         }
 
         private void UserPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -56,9 +58,13 @@ namespace E_HealthCare.PresentationLayer
         {
             AppointmentService appointmentService = new AppointmentService();
             appointmentsDataGridView.DataSource = appointmentService.GetUserAppointments(this.userId);
+            PrescriptionDataGridView();
+        }
 
+        public void PrescriptionDataGridView()
+        {
             PrescriptionService prescriptionService = new PrescriptionService();
-            prescriptionDataGridView.DataSource = prescriptionService.GetUserPrescriptions(this.userId);
+            prescriptionDataGridView.DataSource = prescriptionService.GetUserPrescriptions(this.userId, this.orderByDate);
         }
 
         private void appointmentsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -118,6 +124,12 @@ namespace E_HealthCare.PresentationLayer
             FindAmbulance findAmbulance = new FindAmbulance(this.userId, this.userName);
             this.Hide();
             findAmbulance.Show();
+        }
+
+        private void orderByButton_Click(object sender, EventArgs e)
+        {
+            orderByDate = true;
+            PrescriptionDataGridView();
         }
     }
 }

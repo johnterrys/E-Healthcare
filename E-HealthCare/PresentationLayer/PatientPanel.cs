@@ -15,12 +15,14 @@ namespace E_HealthCare.PresentationLayer
     public partial class PatientPanel : Form
     {
         List<Prescription> prescriptions;
+        bool orderByDate;
         public PatientPanel(int patientId, int appointmentId, string doctorName)
         {
             InitializeComponent();
             PatientId = patientId;
             AppointmentId = appointmentId;
             DoctorName = doctorName;
+            orderByDate = false;
         }
 
         public int PatientId { get; set; }
@@ -37,9 +39,10 @@ namespace E_HealthCare.PresentationLayer
             ageLabel.Text = patient.Age.ToString();
 
             PrescriptionService prescriptionService = new PrescriptionService();
-            var prescriptionId = prescriptionService.GetPatientPrescriptionId(DoctorName, PatientId);
+            //var prescriptionId = prescriptionService.GetPatientPrescriptionId(DoctorName, PatientId);
 
-            this.prescriptions = prescriptionService.GetPatientPrescriptions(prescriptionId);
+            //Console.WriteLine(prescriptionId);
+            this.prescriptions = prescriptionService.GetUserPrescriptions(PatientId, orderByDate);
             Console.WriteLine(prescriptions.Count);
             for (int i = 0; i < prescriptions.Count; i++)
             {
@@ -56,6 +59,13 @@ namespace E_HealthCare.PresentationLayer
         {
             CreatePrescription createPrescription = new CreatePrescription(DoctorName, PatientId, AppointmentId);
             createPrescription.Show();
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            var i = historyComboBox.SelectedIndex;
+            ViewPrescription viewPrescription = new ViewPrescription(prescriptions[i].PrescriptionId);
+            viewPrescription.Show();
         }
     }
 }

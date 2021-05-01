@@ -10,12 +10,22 @@ namespace E_HealthCare.DataAccessLayer
 {
     class PrescriptionDataAccess: DataAccess
     {
-        public List<Prescription> GetUserPrescriptions(int userId)
+        public List<Prescription> GetUserPrescriptions(int userId, bool orederByDate)
         {
-            string sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId,UserId FROM Prescriptions WHERE UserId=" + userId;
+            Console.WriteLine(orederByDate);
+            string sql;
+            if (orederByDate == true)
+            {
+                sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId,UserId FROM Prescriptions WHERE UserId=" + userId + "ORDER BY UserId DESC";
+            }
+            else
+            {
+                sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId,UserId FROM Prescriptions WHERE UserId=" + userId;
+            }
+            
             SqlDataReader reader = this.GetData(sql);
             List<Prescription> prescriptions = new List<Prescription>();
-            if (reader.Read())
+            while (reader.Read())
             {
                 Prescription prescription = new Prescription();
                 prescription.Date = reader["Date"].ToString();
@@ -53,7 +63,7 @@ namespace E_HealthCare.DataAccessLayer
 
         public int GetPrescriptionId(string doctorName, int userId)
         {
-            string sql = "SELECT PrescriptionId FROM Prescriptions WHERE UserId = " + userId;
+            string sql = "SELECT PrescriptionId FROM Prescriptions WHERE UserId = " + userId + "AND DoctorName LIKE '%"+doctorName+"%'";
             SqlDataReader reader = this.GetData(sql);
             if(reader.Read())
             {
@@ -64,7 +74,7 @@ namespace E_HealthCare.DataAccessLayer
 
         public int AddPrescription(Prescription prescription)
         {
-            string sql = "INSERT INTO Prescriptions(Date,DoctorName,Department,Problem,UserId) VALUES ('" + prescription.Date + "', '" + prescription.DoctorName + "','" + prescription.Department + "','" + prescription.Problem + "',"+ prescription.UserId + ")";
+            string sql = "INSERT INTO Prescriptions(Date,DoctorName,Department,Problem,UserId,PatientName) VALUES ('" + prescription.Date + "', '" + prescription.DoctorName + "','" + prescription.Department + "','" + prescription.Problem + "','"+ prescription.UserId + "','"+ prescription.PatientName +"')";
             return this.ExecuteQuery(sql);
         }
 
@@ -79,12 +89,12 @@ namespace E_HealthCare.DataAccessLayer
             return 0;
         }
 
-        public List<Prescription> GetPatientPrescriptions(int prescriptionId)
+        /*public List<Prescription> GetPatientPrescriptions(int prescriptionId)
         {
-            string sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId,UserId FROM Prescriptions WHERE PrescriptionId=" + prescriptionId;
+            string sql = "SELECT Date,DoctorName,Department,Problem,PrescriptionId,UserId,PatientName FROM Prescriptions WHERE PrescriptionId=" + prescriptionId;
             SqlDataReader reader = this.GetData(sql);
             List<Prescription> prescriptions = new List<Prescription>();
-            if (reader.Read())
+            while (reader.Read())
             {
                 Prescription prescription = new Prescription();
                 prescription.Date = reader["Date"].ToString();
@@ -92,16 +102,21 @@ namespace E_HealthCare.DataAccessLayer
                 prescription.Problem = reader["Problem"].ToString();
                 prescription.UserId = Convert.ToInt32(reader["UserId"]);
                 prescription.PrescriptionId = Convert.ToInt32(reader["PrescriptionId"]);
-                string sql2 = "SELECT Name FROM Users WHERE UserId =" + Convert.ToInt32(reader["UserId"]);
-                reader.Close();
-                SqlDataReader reader2 = this.GetData(sql2);
-                if (reader2.Read())
-                {
-                    prescription.PatientName = reader2["Name"].ToString();
-                }
+                prescription.PatientName = reader["PatientName"].ToString();
                 prescriptions.Add(prescription);
             }
             return prescriptions;
+        }*/
+
+        public string GetPatientName(int userId)
+        {
+            string sql = "SELECT Name FROM Users WHERE UserId = " + userId;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+                return reader["Name"].ToString();
+            }
+            return null;
         }
 
         public string GetProblem(int appointmentId)
