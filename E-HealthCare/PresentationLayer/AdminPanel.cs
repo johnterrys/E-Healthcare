@@ -79,7 +79,7 @@ namespace E_HealthCare.PresentationLayer
             UserService userService1 = new UserService();
             doctorDataGridView.DataSource = userService1.GetAdminDoctor();
             UserService userService2 = new UserService();
-            doctorDataGridView.DataSource = userService2.GetAdminProvider();
+            ambulanceDataGridView.DataSource = userService2.GetAdminProvider();
             AppointmentService appointmentService = new AppointmentService();
             appointmentsDataGridView.DataSource = appointmentService.GetAdminAppointments();
             welcomeLabel.Text = this.name;
@@ -198,7 +198,7 @@ namespace E_HealthCare.PresentationLayer
             {
 
                 AppointmentService appointmentService = new AppointmentService();
-                int result = appointmentService.UpdateShift(this.appointmentId, shiftComboBox.Text);
+                int result = appointmentService.UpdateShift(this.appointmentId, shiftComboBox.SelectedItem.ToString());
                 if (result > 0)
                 {
                     MessageBox.Show("Appontment Updated!");

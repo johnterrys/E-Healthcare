@@ -45,6 +45,7 @@ namespace E_HealthCare.PresentationLayer
             this.label3 = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
+            this.idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentDataGridView)).BeginInit();
@@ -221,11 +222,21 @@ namespace E_HealthCare.PresentationLayer
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(509, 101);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(46, 17);
+            this.idLabel.TabIndex = 15;
+            this.idLabel.Text = "label4";
+            // 
             // BloodRequestPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 676);
+            this.Controls.Add(this.idLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.label3);
@@ -273,5 +284,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label idLabel;
     }
 }

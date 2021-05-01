@@ -26,6 +26,7 @@ namespace E_HealthCare.PresentationLayer
             bloodComboBox.DataSource = bloodGroup;
             this.userId = userId;
             this.name = name;
+            idLabel.Text = Convert.ToString(this.userId);
         }
 
         private void label1_Click(object sender, EventArgs e)
