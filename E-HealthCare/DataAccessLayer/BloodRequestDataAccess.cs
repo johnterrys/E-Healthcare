@@ -19,6 +19,7 @@ namespace E_HealthCare.DataAccessLayer
             {
                 BloodRequest bloodRequest = new BloodRequest();
                 bloodRequest.BloodId = Convert.ToInt32(reader["BloodId"]);
+                bloodRequest.BloodGroup = reader["BloodGroup"].ToString();
                 bloodRequest.Requester = reader["Requester"].ToString();
                 bloodRequest.Location = reader["Location"].ToString();
                 bloodRequest.Phone = reader["Phone"].ToString();
@@ -29,7 +30,7 @@ namespace E_HealthCare.DataAccessLayer
 
         public List<BloodRequest> GetDonor(int userId)
         {
-            string sql = "SELECT BloodId,Donor,DonorPhone fROM BloodRequestes WHERE UserId=" + userId;
+            string sql = "SELECT BloodId,BloodGroup,Donor,DonorPhone fROM BloodRequestes WHERE UserId=" + userId;
             SqlDataReader reader = this.GetData(sql);
             List<BloodRequest> rquests = new List<BloodRequest>();
 
@@ -37,6 +38,7 @@ namespace E_HealthCare.DataAccessLayer
             {
                 BloodRequest bloodRequest = new BloodRequest();
                 bloodRequest.BloodId = Convert.ToInt32(reader["BloodId"]);
+                bloodRequest.BloodGroup = reader["BloodGroup"].ToString();
                 bloodRequest.Donor = reader["Donor"].ToString();
                 bloodRequest.DonorPhone = reader["DonorPhone"].ToString();
                 rquests.Add(bloodRequest);

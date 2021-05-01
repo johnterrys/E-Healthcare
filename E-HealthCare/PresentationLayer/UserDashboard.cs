@@ -124,7 +124,7 @@ namespace E_HealthCare.PresentationLayer
                 int result = userService.DeleteUser(this.userId);
                 if (result > 0)
                 {
-                    MessageBox.Show("Doctor Deleted!");
+                    MessageBox.Show("Account Deleted!");
                     LoginPanel loginPanel = new LoginPanel();
                     this.Hide();
                     loginPanel.Show();
