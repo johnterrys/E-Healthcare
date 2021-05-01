@@ -10,22 +10,24 @@ namespace E_HealthCare.BusinessLayer
 {
     class PrescriptionService
     {
+        PrescriptionDataAccess prescriptionDataAccess;
+
+        public PrescriptionService() {
+            this.prescriptionDataAccess = new PrescriptionDataAccess();
+        }
         public int AddPrescription(Prescription prescription)
-        {
-            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
+        { 
             prescriptionDataAccess.AddPrescription(prescription);
-            return prescriptionDataAccess.GetPrescriptionId(prescription.PatientId, prescription.DoctorName);
+            return prescriptionDataAccess.GetPrescriptionId(prescription.UserId, prescription.DoctorName);
         }
 
         public string GetProblem(int appointmentId)
         {
-            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
             return prescriptionDataAccess.GetProblem(appointmentId);
         }
 
         public List<Prescription> GetUserPrescriptions(int userId)
         {
-            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
             return prescriptionDataAccess.GetUserPrescriptions(userId);
         }
 

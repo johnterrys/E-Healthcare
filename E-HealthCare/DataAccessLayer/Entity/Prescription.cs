@@ -13,7 +13,7 @@ namespace E_HealthCare.DataAccessLayer.Entity
         public string DoctorName { get; set; }
         public string Department { get; set; }
         public string Problem { get; set; }
-        public int PatientId { get; set; }
+        public int UserId { get; set; }
         public string PatientName { get; set; }
     }
 }

@@ -32,7 +32,8 @@ namespace E_HealthCare.PresentationLayer
             dateLabel.Text = prescription.Date;
             ProblemLabel.Text = prescription.Problem;
 
-            string path = @"d:\OOP2\E-Healthcare\E-Healthcare\16.json";
+            //string path = @"d:\OOP2\E-Healthcare\E-Healthcare\16.json";
+            string path = @"D:\Documents\Programming\C#\E-Healthcare\"+this.presctriptionId+".json";
             var strResultJson = File.ReadAllText(path);
             medicinesTextBox.Text = JsonConvert.DeserializeObject<List<Medicine>>(strResultJson).ToString();
         }

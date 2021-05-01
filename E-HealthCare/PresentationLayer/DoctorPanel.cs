@@ -61,5 +61,24 @@ namespace E_HealthCare.PresentationLayer
                 patientPanel.Show();
             }
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginPanel loginPanel = new LoginPanel();
+            this.Hide();
+            loginPanel.Show();
+        }
+
+        private void profilePanelButton_Click(object sender, EventArgs e)
+        {
+            UserDashboard userDashboard = new UserDashboard(DoctorId, DoctorName, 3);
+            this.Hide();
+            userDashboard.Show();
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

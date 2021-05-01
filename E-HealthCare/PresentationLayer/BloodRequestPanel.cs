@@ -95,7 +95,7 @@ namespace E_HealthCare.PresentationLayer
 
         private void donorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.bgId = (int)currentDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            this.bgId = (int)donorDataGridView.Rows[e.RowIndex].Cells[0].Value;
         }
 
         private void button1_Click(object sender, EventArgs e)
