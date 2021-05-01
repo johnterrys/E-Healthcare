@@ -30,7 +30,7 @@ namespace E_HealthCare.DataAccessLayer
 
         public List<BloodRequest> GetDonor(int userId)
         {
-            string sql = "SELECT BloodId,BloodGroup,Donor,DonorPhone fROM BloodRequestes WHERE UserId=" + userId;
+            string sql = "SELECT BloodId,BloodGroup,Donor,DonorPhone fROM BloodRequestes";
             SqlDataReader reader = this.GetData(sql);
             List<BloodRequest> rquests = new List<BloodRequest>();
 

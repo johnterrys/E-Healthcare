@@ -75,6 +75,11 @@ namespace E_HealthCare.PresentationLayer
             currentDataGridView.DataSource = requestService.GetRequests(this.bg);
             RequestService requestService1 = new RequestService();
             donorDataGridView.DataSource = requestService1.GetDonor(this.userId);
+
+
+
+
+
         }
 
         private void currentDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,9 +93,9 @@ namespace E_HealthCare.PresentationLayer
             int result = requestService.UpdateRequest(this.bgId, this.name, this.phone);
             if (result > 0)
             {
-                MessageBox.Show("Request Accepted");
+                MessageBox.Show("Thanks For your Donate");
             }
-            else { MessageBox.Show("Request Accepted"); }
+            else { MessageBox.Show("Thanks For your Donate"); }
         }
 
         private void donorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -104,7 +109,6 @@ namespace E_HealthCare.PresentationLayer
             int result = requestService.DeleteRequest(this.bgId);
             if (result > 0)
             {
-                MessageBox.Show("Done!");
                 RequestService requestService1 = new RequestService();
                 donorDataGridView.DataSource = requestService1.GetDonor(this.userId);
             }
@@ -116,6 +120,11 @@ namespace E_HealthCare.PresentationLayer
             UserPanel userPanel = new UserPanel(this.userId, this.name);
             this.Hide();
             userPanel.Show();
+        }
+
+        private void currentDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

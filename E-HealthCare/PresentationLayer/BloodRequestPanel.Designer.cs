@@ -64,10 +64,9 @@ namespace E_HealthCare.PresentationLayer
             "B-",
             "O+",
             "O-"});
-            this.bloodComboBox.Location = new System.Drawing.Point(16, 52);
-            this.bloodComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.bloodComboBox.Location = new System.Drawing.Point(12, 42);
             this.bloodComboBox.Name = "bloodComboBox";
-            this.bloodComboBox.Size = new System.Drawing.Size(353, 34);
+            this.bloodComboBox.Size = new System.Drawing.Size(266, 29);
             this.bloodComboBox.TabIndex = 0;
             // 
             // selectBlood
@@ -75,20 +74,18 @@ namespace E_HealthCare.PresentationLayer
             this.selectBlood.AutoSize = true;
             this.selectBlood.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectBlood.ForeColor = System.Drawing.Color.DarkRed;
-            this.selectBlood.Location = new System.Drawing.Point(9, 15);
-            this.selectBlood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.selectBlood.Location = new System.Drawing.Point(7, 12);
             this.selectBlood.Name = "selectBlood";
-            this.selectBlood.Size = new System.Drawing.Size(262, 34);
+            this.selectBlood.Size = new System.Drawing.Size(202, 27);
             this.selectBlood.TabIndex = 1;
             this.selectBlood.Text = "Select Blood Group";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(663, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(497, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(743, 156);
+            this.pictureBox1.Size = new System.Drawing.Size(557, 127);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -96,11 +93,10 @@ namespace E_HealthCare.PresentationLayer
             // donorDataGridView
             // 
             this.donorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.donorDataGridView.Location = new System.Drawing.Point(861, 317);
-            this.donorDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.donorDataGridView.Location = new System.Drawing.Point(646, 258);
             this.donorDataGridView.Name = "donorDataGridView";
             this.donorDataGridView.RowHeadersWidth = 51;
-            this.donorDataGridView.Size = new System.Drawing.Size(329, 154);
+            this.donorDataGridView.Size = new System.Drawing.Size(247, 125);
             this.donorDataGridView.TabIndex = 3;
             this.donorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.donorDataGridView_CellClick);
             // 
@@ -109,19 +105,17 @@ namespace E_HealthCare.PresentationLayer
             this.donorList.AutoSize = true;
             this.donorList.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.donorList.ForeColor = System.Drawing.Color.DarkGreen;
-            this.donorList.Location = new System.Drawing.Point(979, 246);
-            this.donorList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.donorList.Location = new System.Drawing.Point(734, 200);
             this.donorList.Name = "donorList";
-            this.donorList.Size = new System.Drawing.Size(87, 31);
+            this.donorList.Size = new System.Drawing.Size(68, 23);
             this.donorList.TabIndex = 4;
             this.donorList.Text = "Donor";
             // 
             // requestButton
             // 
-            this.requestButton.Location = new System.Drawing.Point(131, 189);
-            this.requestButton.Margin = new System.Windows.Forms.Padding(4);
+            this.requestButton.Location = new System.Drawing.Point(98, 154);
             this.requestButton.Name = "requestButton";
-            this.requestButton.Size = new System.Drawing.Size(123, 37);
+            this.requestButton.Size = new System.Drawing.Size(92, 30);
             this.requestButton.TabIndex = 5;
             this.requestButton.Text = "Request";
             this.requestButton.UseVisualStyleBackColor = true;
@@ -130,32 +124,30 @@ namespace E_HealthCare.PresentationLayer
             // currentDataGridView
             // 
             this.currentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.currentDataGridView.Location = new System.Drawing.Point(16, 281);
-            this.currentDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.currentDataGridView.Location = new System.Drawing.Point(12, 228);
             this.currentDataGridView.Name = "currentDataGridView";
             this.currentDataGridView.RowHeadersWidth = 51;
-            this.currentDataGridView.Size = new System.Drawing.Size(639, 291);
+            this.currentDataGridView.Size = new System.Drawing.Size(479, 236);
             this.currentDataGridView.TabIndex = 6;
             this.currentDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.currentDataGridView_CellClick);
+            this.currentDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.currentDataGridView_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(232, 246);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(174, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 31);
+            this.label1.Size = new System.Drawing.Size(163, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Current Requests";
             // 
             // donateButton
             // 
-            this.donateButton.Location = new System.Drawing.Point(282, 580);
-            this.donateButton.Margin = new System.Windows.Forms.Padding(4);
+            this.donateButton.Location = new System.Drawing.Point(212, 471);
             this.donateButton.Name = "donateButton";
-            this.donateButton.Size = new System.Drawing.Size(123, 37);
+            this.donateButton.Size = new System.Drawing.Size(92, 30);
             this.donateButton.TabIndex = 8;
             this.donateButton.Text = "Donate";
             this.donateButton.UseVisualStyleBackColor = true;
@@ -163,10 +155,9 @@ namespace E_HealthCare.PresentationLayer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1212, 357);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(909, 290);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 58);
+            this.button1.Size = new System.Drawing.Size(61, 47);
             this.button1.TabIndex = 9;
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = true;
@@ -174,9 +165,10 @@ namespace E_HealthCare.PresentationLayer
             // 
             // locationTextBox
             // 
-            this.locationTextBox.Location = new System.Drawing.Point(189, 108);
+            this.locationTextBox.Location = new System.Drawing.Point(142, 88);
+            this.locationTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.locationTextBox.Name = "locationTextBox";
-            this.locationTextBox.Size = new System.Drawing.Size(154, 22);
+            this.locationTextBox.Size = new System.Drawing.Size(116, 20);
             this.locationTextBox.TabIndex = 10;
             // 
             // label2
@@ -184,10 +176,9 @@ namespace E_HealthCare.PresentationLayer
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(28, 102);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(21, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 31);
+            this.label2.Size = new System.Drawing.Size(92, 23);
             this.label2.TabIndex = 11;
             this.label2.Text = "Location:";
             // 
@@ -196,26 +187,25 @@ namespace E_HealthCare.PresentationLayer
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(54, 140);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(40, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 31);
+            this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 12;
             this.label3.Text = "Phone:";
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Location = new System.Drawing.Point(189, 146);
+            this.phoneTextBox.Location = new System.Drawing.Point(142, 119);
+            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(154, 22);
+            this.phoneTextBox.Size = new System.Drawing.Size(116, 20);
             this.phoneTextBox.TabIndex = 13;
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(1256, 606);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Location = new System.Drawing.Point(942, 492);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(123, 37);
+            this.backButton.Size = new System.Drawing.Size(92, 30);
             this.backButton.TabIndex = 14;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -223,9 +213,9 @@ namespace E_HealthCare.PresentationLayer
             // 
             // BloodRequestPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1421, 676);
+            this.ClientSize = new System.Drawing.Size(1066, 549);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.phoneTextBox);
             this.Controls.Add(this.label3);
@@ -242,7 +232,6 @@ namespace E_HealthCare.PresentationLayer
             this.Controls.Add(this.selectBlood);
             this.Controls.Add(this.bloodComboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BloodRequestPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blood_Request";
