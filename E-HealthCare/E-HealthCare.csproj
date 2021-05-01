@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\AppointmentService.cs" />
     <Compile Include="BusinessLayer\PrescriptionService.cs" />
+    <Compile Include="BusinessLayer\ProviderService.cs" />
     <Compile Include="BusinessLayer\RequestService.cs" />
     <Compile Include="BusinessLayer\UserService.cs" />
     <Compile Include="DataAccessLayer\AmbulanceDataAccess.cs" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="PresentationLayer\AddDoctorPanel.Designer.cs">
       <DependentUpon>AddDoctorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AddVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AddVehicle.Designer.cs">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\AdminPanel.cs">
       <SubType>Form</SubType>
@@ -95,6 +102,12 @@
     <Compile Include="PresentationLayer\DoctorPanel.Designer.cs">
       <DependentUpon>DoctorPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\FindAmbulance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FindAmbulance.Designer.cs">
+      <DependentUpon>FindAmbulance.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\LoginPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +125,12 @@
     </Compile>
     <Compile Include="PresentationLayer\PatientPanel.Designer.cs">
       <DependentUpon>PatientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ProviderPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ProviderPanel.Designer.cs">
+      <DependentUpon>ProviderPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\ViewPrescription.cs">
       <SubType>Form</SubType>
@@ -142,6 +161,9 @@
     <EmbeddedResource Include="PresentationLayer\AddDoctorPanel.resx">
       <DependentUpon>AddDoctorPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddVehicle.resx">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +176,9 @@
     <EmbeddedResource Include="PresentationLayer\DoctorPanel.resx">
       <DependentUpon>DoctorPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FindAmbulance.resx">
+      <DependentUpon>FindAmbulance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PatientPanel.resx">
       <DependentUpon>PatientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ProviderPanel.resx">
+      <DependentUpon>ProviderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\ViewPrescription.resx">
       <DependentUpon>ViewPrescription.cs</DependentUpon>

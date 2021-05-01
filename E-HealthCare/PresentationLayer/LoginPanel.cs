@@ -57,6 +57,12 @@ namespace E_HealthCare.PresentationLayer
                     this.Hide();
                     adminPanel.Show();
                 }
+                else if (user != null && user.Role == 4)
+                {
+                    ProviderPanel providerPanel = new ProviderPanel(user.UserId, user.Name);
+                    this.Hide();
+                    providerPanel.Show();
+                }
                 else {
                     MessageBox.Show("You Don't Have Any Account!");
                 }
@@ -65,7 +71,14 @@ namespace E_HealthCare.PresentationLayer
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(0, null);
+            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(0, null, 2);
+            this.Hide();
+            userRegistrationPanel.Show();
+        }
+
+        private void providerRegisterButton_Click(object sender, EventArgs e)
+        {
+            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(0, null, 4);
             this.Hide();
             userRegistrationPanel.Show();
         }

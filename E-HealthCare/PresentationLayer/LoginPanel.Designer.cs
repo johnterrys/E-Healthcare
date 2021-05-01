@@ -117,6 +117,7 @@ namespace E_HealthCare.PresentationLayer
             this.providerRegisterButton.TabIndex = 7;
             this.providerRegisterButton.Text = "Want to Provide Ambulance?";
             this.providerRegisterButton.UseVisualStyleBackColor = true;
+            this.providerRegisterButton.Click += new System.EventHandler(this.providerRegisterButton_Click);
             // 
             // LoginPanel
             // 

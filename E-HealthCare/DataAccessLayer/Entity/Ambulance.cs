@@ -16,7 +16,9 @@ namespace E_HealthCare.DataAccessLayer.Entity
         public float Fee { get; set; }
         public string BookerName { get; set; }
         public string BookerLocation { get; set; }
-        public int BookerId { get; set; }
+        public string BookerPhone { get; set; }
+        public int Booked { get; set; }
         public int UserId { get; set; }
+        public int BookerId { get; set; }
     }
 }

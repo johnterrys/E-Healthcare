@@ -17,6 +17,7 @@ namespace E_HealthCare.PresentationLayer
         string name;
         int userId;
         int appointmentId;
+        int providerId;
         List<string> department = new List<string> { "","Medicine", "Neurology", "ENT", "Dermatology", "Cardiology" };
         List<string> shift = new List<string> { "ShiftOne", "ShiftTwo" };
         public AdminPanel(int userId, string name)
@@ -53,12 +54,14 @@ namespace E_HealthCare.PresentationLayer
             doctorDataGridView.DataSource = userService1.GetAdminDoctor();
             AppointmentService appointmentService = new AppointmentService();
             appointmentsDataGridView.DataSource = appointmentService.GetAdminAppointments();
+            UserService userService2 = new UserService();
+            ambulanceDataGridView.DataSource = userService2.GetAdminProvider();
             welcomeLabel.Text = this.name;
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(this.adminId, this.name);
+            UserRegistrationPanel userRegistrationPanel = new UserRegistrationPanel(this.adminId, this.name, 2);
             this.Hide();
             userRegistrationPanel.Show();
         }
@@ -75,6 +78,8 @@ namespace E_HealthCare.PresentationLayer
             usersGridView.DataSource = userService.GetAdminUser();
             UserService userService1 = new UserService();
             doctorDataGridView.DataSource = userService1.GetAdminDoctor();
+            UserService userService2 = new UserService();
+            doctorDataGridView.DataSource = userService2.GetAdminProvider();
             AppointmentService appointmentService = new AppointmentService();
             appointmentsDataGridView.DataSource = appointmentService.GetAdminAppointments();
             welcomeLabel.Text = this.name;
@@ -206,6 +211,45 @@ namespace E_HealthCare.PresentationLayer
             {
 
             }
+        }
+
+        private void ambulanceDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.providerId = (int)ambulanceDataGridView.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void removeProviderButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("The Selected Provider Will be Deleted!", "Delete Provider", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                UserService userService = new UserService();
+                int result = userService.DeleteUser(this.providerId);
+                if (result > 0)
+                {
+                    MessageBox.Show("Providor Deleted!");
+                    UpdateLists();
+                }
+                else { MessageBox.Show("Error!"); }
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void availableAmbulenceButton_Click(object sender, EventArgs e)
+        {
+            ProviderService providerService = new ProviderService();
+            ambulanceDataGridView.DataSource = providerService.GetAdminVehicle();
+        }
+
+        private void providerSearchButton_Click(object sender, EventArgs e)
+        {
+            ProviderService providerService = new ProviderService();
+            ambulanceDataGridView.DataSource = providerService.GetAdminVehicleByLoc(locTextBox.Text);
         }
     }
 }

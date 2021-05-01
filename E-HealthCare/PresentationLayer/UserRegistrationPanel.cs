@@ -17,7 +17,8 @@ namespace E_HealthCare.PresentationLayer
         List<string> gender = new List<string> { "Male", "Female", "Other"};
         int adminId;
         string adminName;
-        public UserRegistrationPanel(int userId, string name)
+        int role;
+        public UserRegistrationPanel(int userId, string name, int role)
         {
             InitializeComponent();
             registerButton.Enabled = false;
@@ -25,6 +26,7 @@ namespace E_HealthCare.PresentationLayer
             genderComboBox.DataSource = gender;
             this.adminId = userId;
             this.adminName = name;
+            this.role = role;
         }
 
         private void UserRegistrationPanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -79,7 +81,7 @@ namespace E_HealthCare.PresentationLayer
                 else
                 {
                     UserService userService = new UserService();
-                    int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text, dobDateTimePicker.Text, bgComboBox.Text,genderComboBox.Text,Convert.ToInt32(ageTextBox.Text),2,phoneTextBox.Text,addressTextBox.Text);
+                    int result = userService.AddNewUser(nameTextBox.Text, userNameTextBox.Text, passwordTextBox.Text, dobDateTimePicker.Text, bgComboBox.Text,genderComboBox.Text,Convert.ToInt32(ageTextBox.Text),this.role,phoneTextBox.Text,addressTextBox.Text);
                     if (result > 0)
                     {
                         if (this.adminId == 0)

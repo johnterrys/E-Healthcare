@@ -42,6 +42,11 @@ namespace E_HealthCare.BusinessLayer
             return this.userDataAccess.GetUser(userName, password);
         }
 
+        public List<User> GetAdminProvider()
+        {
+            return this.userDataAccess.GetAdminProvider();
+        }
+
         public User GetUserPass(int userId)
         {
             return this.userDataAccess.GetUserPassword(userId);

@@ -49,6 +49,12 @@ namespace E_HealthCare.PresentationLayer
                 this.Hide();
                 doctorPanel.Show();
             }
+            else
+            {
+                ProviderPanel providerPanel = new ProviderPanel(this.userId, this.userName);
+                this.Hide();
+                providerPanel.Show();
+            }
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -92,6 +98,12 @@ namespace E_HealthCare.PresentationLayer
                                 DoctorPanel doctorPanel = new DoctorPanel(this.userId, this.userName);
                                 this.Hide();
                                 doctorPanel.Show();
+                            }
+                            else if (this.role == 4)
+                            {
+                                ProviderPanel providerPanel = new ProviderPanel(this.userId, this.userName);
+                                this.Hide();
+                                providerPanel.Show();
                             }
                         }
                         else { MessageBox.Show("Error!"); }

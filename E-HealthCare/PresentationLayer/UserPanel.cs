@@ -112,5 +112,12 @@ namespace E_HealthCare.PresentationLayer
             ViewPrescription viewPrescription = new ViewPrescription(this.prescriptionId);
             viewPrescription.Show();
         }
+
+        private void findButton_Click(object sender, EventArgs e)
+        {
+            FindAmbulance findAmbulance = new FindAmbulance(this.userId, this.userName);
+            this.Hide();
+            findAmbulance.Show();
+        }
     }
 }

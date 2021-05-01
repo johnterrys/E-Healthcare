@@ -49,7 +49,6 @@ namespace E_HealthCare.PresentationLayer
             this.viewDoctorByLabel = new System.Windows.Forms.Label();
             this.doctorDepartmentComboBox = new System.Windows.Forms.ComboBox();
             this.viewAmbulanceByLabel = new System.Windows.Forms.Label();
-            this.viewAmbulanceComboBox = new System.Windows.Forms.ComboBox();
             this.findDoctorLabel = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
@@ -62,6 +61,7 @@ namespace E_HealthCare.PresentationLayer
             this.cancelAppointmentButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.shiftComboBox = new System.Windows.Forms.ComboBox();
+            this.locTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.doctorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataGridView)).BeginInit();
@@ -144,6 +144,7 @@ namespace E_HealthCare.PresentationLayer
             this.ambulanceDataGridView.RowTemplate.Height = 24;
             this.ambulanceDataGridView.Size = new System.Drawing.Size(385, 150);
             this.ambulanceDataGridView.TabIndex = 13;
+            this.ambulanceDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ambulanceDataGridView_CellClick);
             // 
             // ambulanceLabel
             // 
@@ -233,6 +234,7 @@ namespace E_HealthCare.PresentationLayer
             this.availableAmbulenceButton.TabIndex = 22;
             this.availableAmbulenceButton.Text = "Available Ambulence";
             this.availableAmbulenceButton.UseVisualStyleBackColor = true;
+            this.availableAmbulenceButton.Click += new System.EventHandler(this.availableAmbulenceButton_Click);
             // 
             // removeProviderButton
             // 
@@ -244,6 +246,7 @@ namespace E_HealthCare.PresentationLayer
             this.removeProviderButton.TabIndex = 23;
             this.removeProviderButton.Text = "Remove Provider";
             this.removeProviderButton.UseVisualStyleBackColor = true;
+            this.removeProviderButton.Click += new System.EventHandler(this.removeProviderButton_Click);
             // 
             // addUserButton
             // 
@@ -284,14 +287,6 @@ namespace E_HealthCare.PresentationLayer
             this.viewAmbulanceByLabel.Size = new System.Drawing.Size(142, 18);
             this.viewAmbulanceByLabel.TabIndex = 27;
             this.viewAmbulanceByLabel.Text = "View By Location:";
-            // 
-            // viewAmbulanceComboBox
-            // 
-            this.viewAmbulanceComboBox.FormattingEnabled = true;
-            this.viewAmbulanceComboBox.Location = new System.Drawing.Point(913, 263);
-            this.viewAmbulanceComboBox.Name = "viewAmbulanceComboBox";
-            this.viewAmbulanceComboBox.Size = new System.Drawing.Size(121, 24);
-            this.viewAmbulanceComboBox.TabIndex = 28;
             // 
             // findDoctorLabel
             // 
@@ -349,6 +344,7 @@ namespace E_HealthCare.PresentationLayer
             this.providerSearchButton.TabIndex = 33;
             this.providerSearchButton.Text = "Search";
             this.providerSearchButton.UseVisualStyleBackColor = true;
+            this.providerSearchButton.Click += new System.EventHandler(this.providerSearchButton_Click);
             // 
             // doctorNameTextBox
             // 
@@ -416,11 +412,19 @@ namespace E_HealthCare.PresentationLayer
             this.shiftComboBox.Size = new System.Drawing.Size(121, 24);
             this.shiftComboBox.TabIndex = 40;
             // 
+            // locTextBox
+            // 
+            this.locTextBox.Location = new System.Drawing.Point(882, 265);
+            this.locTextBox.Name = "locTextBox";
+            this.locTextBox.Size = new System.Drawing.Size(145, 22);
+            this.locTextBox.TabIndex = 41;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1352, 640);
+            this.Controls.Add(this.locTextBox);
             this.Controls.Add(this.shiftComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cancelAppointmentButton);
@@ -433,7 +437,6 @@ namespace E_HealthCare.PresentationLayer
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.findDoctorLabel);
-            this.Controls.Add(this.viewAmbulanceComboBox);
             this.Controls.Add(this.viewAmbulanceByLabel);
             this.Controls.Add(this.doctorDepartmentComboBox);
             this.Controls.Add(this.viewDoctorByLabel);
@@ -491,7 +494,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Label viewDoctorByLabel;
         private System.Windows.Forms.ComboBox doctorDepartmentComboBox;
         private System.Windows.Forms.Label viewAmbulanceByLabel;
-        private System.Windows.Forms.ComboBox viewAmbulanceComboBox;
         private System.Windows.Forms.Label findDoctorLabel;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button removeButton;
@@ -504,5 +506,6 @@ namespace E_HealthCare.PresentationLayer
         private System.Windows.Forms.Button cancelAppointmentButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox shiftComboBox;
+        private System.Windows.Forms.MaskedTextBox locTextBox;
     }
 }
