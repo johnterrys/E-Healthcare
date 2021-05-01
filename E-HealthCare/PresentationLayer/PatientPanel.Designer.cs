@@ -39,6 +39,7 @@
             this.createPrescriptionButton = new System.Windows.Forms.Button();
             this.problemLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.historyComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -151,11 +152,20 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Problem:";
             // 
+            // historyComboBox
+            // 
+            this.historyComboBox.FormattingEnabled = true;
+            this.historyComboBox.Location = new System.Drawing.Point(247, 272);
+            this.historyComboBox.Name = "historyComboBox";
+            this.historyComboBox.Size = new System.Drawing.Size(121, 21);
+            this.historyComboBox.TabIndex = 11;
+            // 
             // PatientPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 335);
+            this.ClientSize = new System.Drawing.Size(528, 381);
+            this.Controls.Add(this.historyComboBox);
             this.Controls.Add(this.problemLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.createPrescriptionButton);
@@ -189,5 +199,6 @@
         private System.Windows.Forms.Button createPrescriptionButton;
         private System.Windows.Forms.Label problemLabel;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox historyComboBox;
     }
 }

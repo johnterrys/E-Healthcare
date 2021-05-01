@@ -27,6 +27,12 @@ namespace E_HealthCare.PresentationLayer
 
         private void DoctorPanel_Load(object sender, EventArgs e)
         {
+            AppointmentDataGridViewLoad();
+            welcomeLabel.Text = "Dr."+DoctorName;
+        }
+
+        public void AppointmentDataGridViewLoad()
+        {
             AppointmentService appointmentService = new AppointmentService();
             appoinmentsDataGridView.DataSource = appointmentService.GetDoctorAppointments(DoctorId);
             appoinmentsDataGridView.Columns["AppointmentId"].Visible = false;
@@ -45,6 +51,7 @@ namespace E_HealthCare.PresentationLayer
             {
                 var selectedPatient = appoinmentsDataGridView.SelectedRows[0].DataBoundItem as Appointment;
                 SelectedPatient = selectedPatient;
+                selectedPatient = null;
             }
             catch (Exception ex)
             {
@@ -78,7 +85,12 @@ namespace E_HealthCare.PresentationLayer
 
         private void doneButton_Click(object sender, EventArgs e)
         {
-
+            if(SelectedPatient != null)
+            {
+                AppointmentService appointmentService = new AppointmentService();
+                appointmentService.DeleteAppointment(SelectedPatient.AppointmentId);
+                AppointmentDataGridViewLoad();
+            }
         }
     }
 }

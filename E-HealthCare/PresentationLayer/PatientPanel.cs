@@ -1,4 +1,5 @@
 ﻿using E_HealthCare.BusinessLayer;
+using E_HealthCare.DataAccessLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace E_HealthCare.PresentationLayer
 {
     public partial class PatientPanel : Form
     {
+        List<Prescription> prescriptions;
         public PatientPanel(int patientId, int appointmentId, string doctorName)
         {
             InitializeComponent();
@@ -33,6 +35,16 @@ namespace E_HealthCare.PresentationLayer
             problemLabel.Text = patient.Problem;
             bloodGroupLabel.Text = patient.BloodGroup;
             ageLabel.Text = patient.Age.ToString();
+
+            PrescriptionService prescriptionService = new PrescriptionService();
+            var prescriptionId = prescriptionService.GetPatientPrescriptionId(DoctorName, PatientId);
+
+            this.prescriptions = prescriptionService.GetPatientPrescriptions(prescriptionId);
+            Console.WriteLine(prescriptions.Count);
+            for (int i = 0; i < prescriptions.Count; i++)
+            {
+                historyComboBox.Items.Add(prescriptions[i].DoctorName);
+            }
         }
 
         private void PatientPanel_FormClosing(object sender, FormClosingEventArgs e)

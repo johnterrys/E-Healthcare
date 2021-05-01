@@ -38,7 +38,6 @@ namespace E_HealthCare.BusinessLayer
         }
         public int DeleteAppointment(int id)
         {
-
             return this.appointmentDataAccess.DeleteAppointment(id);
         }
 

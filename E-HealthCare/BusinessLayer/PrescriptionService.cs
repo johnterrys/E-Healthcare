@@ -18,7 +18,7 @@ namespace E_HealthCare.BusinessLayer
         public int AddPrescription(Prescription prescription)
         { 
             prescriptionDataAccess.AddPrescription(prescription);
-            return prescriptionDataAccess.GetPrescriptionId(prescription.UserId, prescription.DoctorName);
+            return prescriptionDataAccess.GetPrescriptionId(prescription.DoctorName, prescription.UserId);
         }
 
         public string GetProblem(int appointmentId)
@@ -35,6 +35,16 @@ namespace E_HealthCare.BusinessLayer
         {
             PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
             return prescriptionDataAccess.GetUserPrescription(prescriptionId);
+        }
+
+        public int GetPatientPrescriptionId(string doctorName, int userId)
+        {
+            PrescriptionDataAccess prescriptionDataAccess = new PrescriptionDataAccess();
+            return prescriptionDataAccess.GetPrescriptionId(doctorName, userId);
+        }
+        public List<Prescription> GetPatientPrescriptions(int prescriptionId)
+        {
+            return prescriptionDataAccess.GetPatientPrescriptions(prescriptionId);
         }
     }
 }
